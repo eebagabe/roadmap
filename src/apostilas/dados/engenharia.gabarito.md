@@ -1,4 +1,4 @@
-# Gabarito — Engenharia de Dados
+# Gabarito: Engenharia de Dados
 
 Abra só depois de tentar.
 

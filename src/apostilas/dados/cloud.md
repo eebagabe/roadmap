@@ -1,4 +1,4 @@
-# Cloud e Big Data — Apostila Prática
+# Cloud e Big Data: Apostila Prática
 
 Roadmap Analista e Engenheiro de Dados · Semanas 15 a 17
 
@@ -24,11 +24,11 @@ Hoje quase toda plataforma de dados vive na **nuvem**: os dados ficam em armazen
 
 | Semana | Tema |
 |---|---|
-| 15 | Tema 1 — Data Warehouse e Lakehouse |
-| 16 | Tema 2 — Dados na nuvem |
-| 17 | Tema 3 — Streaming + projeto |
+| 15 | Tema 1: Data Warehouse e Lakehouse |
+| 16 | Tema 2: Dados na nuvem |
+| 17 | Tema 3: Streaming + projeto |
 
-## Tema 1 — Data Warehouse e Lakehouse
+## Tema 1: Data Warehouse e Lakehouse
 
 **Objetivo:** entender onde os dados analíticos moram e as diferenças entre as arquiteturas.
 
@@ -116,7 +116,7 @@ spark.read.format("delta").option("versionAsOf", 3).load("/lake/prata/pedidos") 
 
 O **Iceberg** tem recursos parecidos e é suportado por muitos motores (Spark, Trino, Flink, Snowflake, BigQuery, Athena), o que facilita usar a mesma tabela em ferramentas diferentes.
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Explique para alguém de negócios a diferença entre data warehouse, data lake e lakehouse, com uma analogia.
 2. Classifique em bronze, prata ou ouro: (a) eventos de clique em JSON como chegaram do app; (b) tabela de clientes com CPF validado e sem duplicados; (c) faturamento mensal por região; (d) dump diário do banco de produção.
@@ -124,7 +124,7 @@ O **Iceberg** tem recursos parecidos e é suportado por muitos motores (Spark, T
 4. Por que guardar a camada bronze se ela é "suja"?
 5. Cite duas vantagens de formatos abertos como Delta e Iceberg sobre um warehouse proprietário.
 
-## Tema 2 — Dados na nuvem
+## Tema 2: Dados na nuvem
 
 **Objetivo:** conhecer os serviços de dados dos provedores e cuidar de segurança e custo.
 
@@ -227,7 +227,7 @@ terraform init && terraform plan && terraform apply
 terraform destroy      # apaga tudo ao terminar os estudos
 ```
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Monte uma tabela "peça → AWS → GCP → Azure" para: armazenamento de objetos, warehouse, Spark gerenciado, streaming e orquestração.
 2. Suba o MinIO com Docker, crie um bucket e grave arquivos Parquet organizados por camada e data com Python (`boto3` ou `s3fs`).
@@ -235,7 +235,7 @@ terraform destroy      # apaga tudo ao terminar os estudos
 4. Liste 5 ações para reduzir a conta de nuvem de um time de dados que dobrou em 3 meses.
 5. Escreva em Terraform um bucket com bloqueio de acesso público e versionamento.
 
-## Tema 3 — Streaming
+## Tema 3: Streaming
 
 **Objetivo:** entender quando e como processar dados em tempo real.
 
@@ -328,7 +328,7 @@ Na prática, "exactly once" de ponta a ponta exige **fonte reprocessável** (Kaf
 
 > **Cuidado! Cai na entrevista:** "Como evitar duplicados num pipeline de streaming?" Cada evento com um **ID único**; escrita idempotente (merge/upsert por ID) ou deduplicação com estado (`dropDuplicates` com watermark no Spark); checkpoints para retomar do ponto certo.
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Para cada caso, streaming ou batch? Justifique. (a) bloqueio de transação suspeita; (b) relatório de vendas para o fechamento contábil; (c) painel de pedidos atrasados para a operação de delivery; (d) treinamento semanal de um modelo de recomendação.
 2. Suba Kafka com Docker, crie um tópico `pedidos` e escreva um produtor Python que publica 1 evento por segundo e um consumidor que imprime os eventos.

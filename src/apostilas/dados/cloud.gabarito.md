@@ -1,4 +1,4 @@
-# Gabarito — Cloud e Big Data
+# Gabarito: Cloud e Big Data
 
 Abra só depois de tentar.
 
@@ -66,7 +66,7 @@ Abra só depois de tentar.
        print(msg.key(), msg.value())
    ```
 3. A chave define a partição: todos os eventos do mesmo pedido (criado, pago, enviado) vão para a mesma partição, e a **ordem** entre eles é garantida. Também ajuda na compactação de tópicos e na deduplicação por chave.
-4. **Entra**, desde que a janela ainda não tenha sido fechada. O watermark é calculado a partir do **maior tempo de evento já visto** menos 10 minutos. Se às 12:20 de relógio o maior evento visto era das 12:12, o watermark é 12:02 e a janela 12:00–12:05 ainda está aberta: o evento das 12:03 é incluído. Se já tivessem chegado eventos das 12:15 ou mais (watermark ≥ 12:05), a janela teria sido fechada e o evento seria descartado como atrasado demais. O que importa é o **tempo do evento** dos dados, não o horário do relógio.
+4. **Entra**, desde que a janela ainda não tenha sido fechada. O watermark é calculado a partir do **maior tempo de evento já visto** menos 10 minutos. Se às 12:20 de relógio o maior evento visto era das 12:12, o watermark é 12:02 e a janela 12:00 a 12:05 ainda está aberta: o evento das 12:03 é incluído. Se já tivessem chegado eventos das 12:15 ou mais (watermark ≥ 12:05), a janela teria sido fechada e o evento seria descartado como atrasado demais. O que importa é o **tempo do evento** dos dados, não o horário do relógio.
 5. (1) **Deletes:** CDC captura; incremental por data não vê. (2) **Mudanças intermediárias:** CDC registra cada alteração; incremental vê só o estado no momento da carga. (3) **Carga na origem e latência:** CDC lê o log de transações com pouca carga e latência de segundos; incremental faz consultas periódicas na tabela, mais pesadas e com latência do intervalo entre cargas. Bônus: CDC não depende de uma coluna `atualizado_em` confiável.
 
 ## Projeto da etapa

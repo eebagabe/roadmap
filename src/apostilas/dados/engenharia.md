@@ -1,4 +1,4 @@
-# Engenharia de Dados — Apostila Prática
+# Engenharia de Dados: Apostila Prática
 
 Roadmap Analista e Engenheiro de Dados · Semanas 11 a 14
 
@@ -24,12 +24,12 @@ O Engenheiro de Dados constrói os **pipelines**: os "encanamentos" que buscam d
 
 | Semana | Tema |
 |---|---|
-| 11 | Tema 1 — Pipelines, ETL e ELT |
-| 12 | Tema 2 — Orquestração com Airflow |
-| 13 | Tema 3 — Processamento com Spark |
-| 14 | Tema 4 — Transformação com dbt + projeto |
+| 11 | Tema 1: Pipelines, ETL e ELT |
+| 12 | Tema 2: Orquestração com Airflow |
+| 13 | Tema 3: Processamento com Spark |
+| 14 | Tema 4: Transformação com dbt + projeto |
 
-## Tema 1 — Pipelines, ETL e ELT
+## Tema 1: Pipelines, ETL e ELT
 
 **Objetivo:** desenhar pipelines que podem ser rodados de novo sem estragar nada.
 
@@ -164,7 +164,7 @@ def executar(dia: date, engine) -> None:
 
 Boas práticas: funções separadas por etapa (fáceis de testar), parâmetro de **data lógica**, logs, transação na carga, upsert, configuração por variável de ambiente.
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Para cada caso, batch ou streaming? (a) relatório mensal de comissões; (b) bloqueio de cartão em compra suspeita; (c) atualização do estoque no site a cada venda; (d) dashboard diário de marketing.
 2. Explique a diferença entre ETL e ELT e por que o ELT ficou popular.
@@ -172,7 +172,7 @@ Boas práticas: funções separadas por etapa (fáceis de testar), parâmetro de
 4. Quais problemas uma carga incremental por `atualizado_em` pode ter? Cite 3.
 5. Implemente o pipeline de cotações acima com PostgreSQL no Docker e rode duas vezes para o mesmo dia. Confirme que não duplicou.
 
-## Tema 2 — Orquestração com Airflow
+## Tema 2: Orquestração com Airflow
 
 **Objetivo:** agendar, encadear e monitorar pipelines.
 
@@ -247,7 +247,7 @@ Só funciona bem se as tasks forem **idempotentes** e usarem a **data lógica**.
 - **SLAs/prazos:** alertar se o DAG não terminou até certo horário (o dashboard das 8h depende dele).
 - Interface web: ver execuções, logs de cada task, reexecutar só a task que falhou.
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Suba o Airflow localmente com o `docker-compose.yaml` oficial (ou com o Astro CLI) e explore a interface.
 2. Transforme o pipeline de cotações num DAG diário com retries e use a data lógica.
@@ -255,7 +255,7 @@ Só funciona bem se as tasks forem **idempotentes** e usarem a **data lógica**.
 4. Por que não é boa ideia processar um arquivo de 5 GB dentro de uma task Python do Airflow e passar o resultado por XCom? O que fazer?
 5. Adicione uma task de **validação** entre extrair e carregar, que falha se o valor da cotação estiver fora de uma faixa razoável.
 
-## Tema 3 — Processamento com Spark
+## Tema 3: Processamento com Spark
 
 **Objetivo:** processar volumes que não cabem em uma máquina.
 
@@ -332,7 +332,7 @@ spark.sql("""
 
 O mesmo motor e as mesmas otimizações. Use o que for mais legível para o time.
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Explique lazy evaluation com um exemplo, e por que ela permite otimizações.
 2. Baixe um mês de dados de viagens de táxi de Nova York (formato Parquet, site oficial da TLC) e calcule com PySpark: viagens e receita por dia, e a média de gorjeta por forma de pagamento.
@@ -340,7 +340,7 @@ O mesmo motor e as mesmas otimizações. Use o que for mais legível para o time
 4. Uma tabela de 2 TB de eventos é juntada com uma tabela de 50 MB de países. Como otimizar o join?
 5. Grave o resultado do exercício 2 particionado por dia. Liste as pastas criadas e explique o ganho numa consulta de um único dia.
 
-## Tema 4 — Transformação com dbt
+## Tema 4: Transformação com dbt
 
 **Objetivo:** organizar as transformações SQL do warehouse como um projeto de software.
 
@@ -473,7 +473,7 @@ Gera um site com a descrição de cada model e coluna e o **grafo de linhagem**:
 
 > **Cuidado! Cai na entrevista:** "Como você garante a qualidade das transformações?" Testes do dbt em chaves (unique/not_null), relacionamentos e regras de negócio; freshness das fontes; `dbt build` no CI a cada pull request (num ambiente separado); documentação e linhagem para avaliar impacto.
 
-### Atividades de fixação — Tema 4
+### Atividades de fixação do Tema 4
 
 1. Crie um projeto dbt com DuckDB, carregue os CSVs da etapa de SQL (clientes, produtos, pedidos, itens) como seeds ou sources e crie os models de staging.
 2. Crie `dim_clientes`, `dim_produtos` e `fato_vendas` (grão: item de pedido pago).

@@ -1,4 +1,4 @@
-# Análise de Dados e BI — Apostila Prática
+# Análise de Dados e BI: Apostila Prática
 
 Roadmap Analista e Engenheiro de Dados · Semanas 08 a 10
 
@@ -24,11 +24,11 @@ Analisar dados é **responder perguntas de negócio** com evidência. Ferramenta
 
 | Semana | Tema |
 |---|---|
-| 08 | Tema 1 — Pandas |
-| 09 | Tema 2 — Visualização e BI |
-| 10 | Tema 3 — Métricas de negócio + projeto |
+| 08 | Tema 1: Pandas |
+| 09 | Tema 2: Visualização e BI |
+| 10 | Tema 3: Métricas de negócio + projeto |
 
-## Tema 1 — Pandas
+## Tema 1: Pandas
 
 **Objetivo:** carregar, limpar, transformar e resumir dados tabulares.
 
@@ -129,7 +129,7 @@ df["dias_para_entrega"] = (df["entregue_em"] - df["comprado_em"]).dt.days
 mensal = df.set_index("data").resample("MS")["valor"].sum()   # soma por mês
 ```
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Carregue a tabela de pedidos da Olist e responda: quantas linhas, quantos status diferentes e quantos nulos em cada coluna de data.
 2. Calcule, para pedidos entregues, o tempo de entrega em dias e a diferença para o prazo estimado. Que % chegou atrasado?
@@ -137,7 +137,7 @@ mensal = df.set_index("data").resample("MS")["valor"].sum()   # soma por mês
 4. Monte uma tabela com faturamento mensal e o crescimento percentual mês a mês (`pct_change`).
 5. Uma coluna de preço veio como texto `"R$ 1.234,56"`. Converta para número.
 
-## Tema 2 — Visualização e BI
+## Tema 2: Visualização e BI
 
 **Objetivo:** escolher o gráfico certo e montar dashboards que as pessoas entendem em segundos.
 
@@ -234,7 +234,7 @@ Estrutura para apresentar uma análise:
 
 > **Na prática:** comece pela **conclusão** ("Recomendo aumentar o prazo prometido no Norte: 30% dos pedidos atrasam e a nota de avaliação cai pela metade"). Depois mostre a evidência. Gestores têm pouco tempo.
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Qual gráfico você usaria para: (a) faturamento dos últimos 24 meses; (b) participação de 3 meios de pagamento; (c) relação entre tempo de entrega e nota da avaliação; (d) faturamento das 15 categorias.
 2. Reescreva o título "Vendas por região" para que diga a conclusão, sabendo que o Nordeste cresceu 40% e as outras regiões ficaram estáveis.
@@ -242,7 +242,7 @@ Estrutura para apresentar uma análise:
 4. Escreva as medidas DAX: faturamento, quantidade de pedidos, ticket médio e % de pedidos atrasados.
 5. Esboce (papel ou ferramenta) um dashboard de vendas para a diretoria: quais KPIs, quais gráficos e quais filtros?
 
-## Tema 3 — Métricas de negócio
+## Tema 3: Métricas de negócio
 
 **Objetivo:** escolher, calcular e interpretar as métricas que o negócio usa para decidir.
 
@@ -263,7 +263,7 @@ Sequência de etapas até o objetivo, com a taxa de passagem em cada uma:
 
 | Etapa | Usuários | Conversão da etapa | Conversão total |
 |---|---|---|---|
-| Visitou | 100.000 | — | 100% |
+| Visitou | 100.000 | - | 100% |
 | Viu produto | 40.000 | 40% | 40% |
 | Adicionou ao carrinho | 8.000 | 20% | 8% |
 | Iniciou checkout | 4.000 | 50% | 4% |
@@ -278,8 +278,8 @@ A maior **perda absoluta** e as etapas com conversão abaixo do esperado mostram
 | Coorte | Mês 0 | Mês 1 | Mês 2 | Mês 3 |
 |---|---|---|---|---|
 | Jan | 100% | 22% | 15% | 12% |
-| Fev | 100% | 25% | 17% | — |
-| Mar | 100% | 31% | — | — |
+| Fev | 100% | 25% | 17% | - |
+| Mar | 100% | 31% | - | - |
 
 Leitura: a retenção no mês 1 está **melhorando** (22% → 25% → 31%), um efeito que a média geral esconderia.
 
@@ -328,7 +328,7 @@ print(f"A: {480/10000:.2%}  B: {540/10000:.2%}  p-valor: {p:.3f}")
 - Termine com **recomendação** e próximo passo.
 - Uma página ou poucos slides. Detalhes no apêndice.
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Defina 3 KPIs para um app de delivery e escreva a definição exata de cada um (o que entra, o que não entra, período).
 2. Com o funil da seção 3.2: se você pudesse aumentar em 10 pontos percentuais a conversão de **uma** etapa, qual escolheria para ganhar mais vendas? Mostre a conta.

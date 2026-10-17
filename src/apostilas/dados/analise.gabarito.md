@@ -1,4 +1,4 @@
-# Gabarito — Análise de Dados e BI
+# Gabarito: Análise de Dados e BI
 
 Abra só depois de tentar. Os nomes das colunas seguem a base pública da Olist; números exatos dependem da versão do arquivo.
 

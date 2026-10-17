@@ -1,4 +1,4 @@
-# Governança e Arquitetura — Apostila Prática
+# Governança e Arquitetura: Apostila Prática
 
 Roadmap Analista e Engenheiro de Dados · Semanas 18 e 19
 
@@ -23,10 +23,10 @@ Ter dados não basta: eles precisam ser **confiáveis** (alguém acredita no nú
 
 | Semana | Tema |
 |---|---|
-| 18 | Tema 1 — Governança e qualidade |
-| 19 | Tema 2 — Arquitetura e carreira + projeto final |
+| 18 | Tema 1: Governança e qualidade |
+| 19 | Tema 2: Arquitetura e carreira + projeto final |
 
-## Tema 1 — Governança e qualidade
+## Tema 1: Governança e qualidade
 
 **Objetivo:** garantir que os dados sejam confiáveis, documentados e usados de forma legal.
 
@@ -124,7 +124,7 @@ Assim como software tem monitoramento, dados também precisam. Os "pilares" cost
 
 O objetivo é o time de dados descobrir o problema **antes** do usuário do dashboard. Ferramentas: Monte Carlo, Elementary (sobre dbt), Soda, e métricas próprias com alertas.
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Classifique: (a) e-mail; (b) histórico de compras associado ao CPF; (c) tipo sanguíneo; (d) contagem de pedidos por estado; (e) IP de acesso. Quais são dados pessoais? Quais são sensíveis? Qual não é dado pessoal?
 2. Um cliente pede a eliminação dos seus dados. Liste os passos e os desafios numa plataforma com banco de produção, data lake (bronze/prata/ouro), warehouse e backups.
@@ -132,7 +132,7 @@ O objetivo é o time de dados descobrir o problema **antes** do usuário do dash
 4. Escreva 3 testes de regra de negócio (em SQL, no estilo dbt) para uma tabela de pedidos.
 5. O dashboard de vendas mostrou queda de 60% ontem, mas as vendas estavam normais. Quais verificações de observabilidade teriam detectado o problema antes?
 
-## Tema 2 — Arquitetura e carreira
+## Tema 2: Arquitetura e carreira
 
 **Objetivo:** enxergar a plataforma de dados como um todo e escolher seu caminho.
 
@@ -206,7 +206,7 @@ Caminhos comuns: começar como analista e migrar para analytics engineer ou enge
 
 Portfólio que chama atenção: 2 ou 3 projetos completos no GitHub (com README, desenho de arquitetura e decisões), em vez de 15 notebooks soltos. Certificações de nuvem (como as de dados do Google Cloud, AWS ou Azure) e do dbt ajudam em processos seletivos.
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Desenhe a Modern Data Stack que você montaria para uma startup de 50 pessoas, com orçamento limitado. Justifique cada escolha.
 2. Explique Data Mesh para um gestor em até 5 frases. Para qual tipo de empresa você recomendaria?
@@ -214,7 +214,7 @@ Portfólio que chama atenção: 2 ou 3 projetos completos no GitHub (com README,
 4. Que preparação de dados seria necessária para um assistente que responde perguntas sobre os contratos da empresa (PDFs) usando RAG?
 5. Com base no que estudou no roadmap, qual papel combina mais com você? Escreva um plano de 3 meses para chegar a uma vaga nesse papel.
 
-## Projeto da etapa — Projeto final do roadmap
+## Projeto da etapa: projeto final do roadmap
 
 **Plataforma de dados de ponta a ponta (escolha um domínio: e-commerce, delivery, finanças pessoais):**
 

@@ -1,4 +1,4 @@
-# Gabarito — SQL e Modelagem
+# Gabarito: SQL e Modelagem
 
 Abra só depois de tentar. Os resultados indicados usam os dados de exemplo da apostila.
 

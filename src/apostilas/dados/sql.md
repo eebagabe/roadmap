@@ -1,4 +1,4 @@
-# SQL e Modelagem — Apostila Prática
+# SQL e Modelagem: Apostila Prática
 
 Roadmap Analista e Engenheiro de Dados · Semanas 04 a 07
 
@@ -62,12 +62,12 @@ INSERT INTO itens VALUES
 
 | Semana | Tema |
 |---|---|
-| 04 | Tema 1 — SQL essencial |
-| 05 | Tema 2 — Joins, subqueries e CTEs |
-| 06 | Tema 3 — Window functions e performance |
-| 07 | Tema 4 — Modelagem de dados + projeto |
+| 04 | Tema 1: SQL essencial |
+| 05 | Tema 2: Joins, subqueries e CTEs |
+| 06 | Tema 3: Window functions e performance |
+| 07 | Tema 4: Modelagem de dados + projeto |
 
-## Tema 1 — SQL essencial
+## Tema 1: SQL essencial
 
 **Objetivo:** filtrar, ordenar, transformar e agregar dados de uma tabela.
 
@@ -147,7 +147,7 @@ SELECT COUNT(*), COUNT(cidade) FROM clientes;   -- 5 e 4: COUNT(coluna) ignora N
 
 `AVG`, `SUM` e outras agregações também ignoram `NULL`. Isso pode mudar o resultado sem você perceber.
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Liste os produtos da categoria Mercearia, do mais caro para o mais barato.
 2. Quantos pedidos existem por status?
@@ -155,7 +155,7 @@ SELECT COUNT(*), COUNT(cidade) FROM clientes;   -- 5 e 4: COUNT(coluna) ignora N
 4. Qual o faturamento (soma de quantidade × preço unitário) de cada produto? Mostre só os acima de R$ 100.
 5. Explique o resultado de `SELECT COUNT(*), COUNT(cidade), COUNT(DISTINCT cidade) FROM clientes;`.
 
-## Tema 2 — Joins, subqueries e CTEs
+## Tema 2: Joins, subqueries e CTEs
 
 **Objetivo:** combinar tabelas sem duplicar nem perder linhas.
 
@@ -247,7 +247,7 @@ Empilha resultados com as mesmas colunas. `UNION` remove duplicados (mais caro);
 
 Antes de escrever qualquer query de análise, responda: **"uma linha do resultado representa o quê?"** (um cliente? um cliente por mês? um pedido?). Esse hábito evita a maior parte dos erros de número em dashboards.
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Liste cada pedido com o nome do cliente e o valor total do pedido.
 2. Quais clientes nunca fizeram um pedido pago? (Inclua quem nunca fez pedido nenhum.)
@@ -255,7 +255,7 @@ Antes de escrever qualquer query de análise, responda: **"uma linha do resultad
 4. Usando CTE, encontre o cliente com maior gasto em pedidos pagos.
 5. Por que `SELECT COUNT(*) FROM pedidos p JOIN itens i ON i.pedido_id = p.id WHERE p.status = 'PAGO'` não responde "quantos pedidos pagos existem"? Corrija.
 
-## Tema 3 — Window functions e performance
+## Tema 3: Window functions e performance
 
 **Objetivo:** fazer cálculos "olhando para outras linhas" sem perder o detalhe, e escrever queries rápidas.
 
@@ -341,7 +341,7 @@ Boas práticas em warehouses pagos por dados lidos:
 - Sempre filtre pela coluna de partição.
 - Filtre antes de juntar; agregue antes de juntar quando possível.
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Para cada cliente, numere os pedidos em ordem de data (1º pedido, 2º pedido...).
 2. Mostre o produto mais vendido (em quantidade) de cada categoria.
@@ -349,7 +349,7 @@ Boas práticas em warehouses pagos por dados lidos:
 4. Faturamento pago por mês e a variação percentual em relação ao mês anterior.
 5. Uma tabela de eventos tem duplicados (mesmo `evento_id` com `recebido_em` diferentes). Escreva a query que mantém só o registro mais recente de cada `evento_id`.
 
-## Tema 4 — Modelagem de dados
+## Tema 4: Modelagem de dados
 
 **Objetivo:** organizar tabelas para que as análises fiquem simples, corretas e rápidas.
 
@@ -382,7 +382,7 @@ Perguntas de negócio têm a forma "**métrica** por **dimensão**": faturamento
 ```
               dim_data
                  |
-dim_cliente — fato_vendas — dim_produto
+dim_cliente --- fato_vendas --- dim_produto
                  |
               dim_loja
 ```
@@ -434,7 +434,7 @@ A decisão mais importante do modelo: **o que uma linha da fato representa?** "U
 
 > **Cuidado! Cai na entrevista:** "Modele o data warehouse de um e-commerce." Comece declarando o **processo de negócio** (vendas), depois o **grão** (um item de pedido), as **dimensões** (data, cliente, produto, loja/canal) e os **fatos** (quantidade, valor, desconto). Mencione SCD 2 para cliente.
 
-### Atividades de fixação — Tema 4
+### Atividades de fixação do Tema 4
 
 1. Classifique como OLTP ou OLAP: (a) registrar um PIX; (b) relatório de inadimplência por região nos últimos 12 meses; (c) atualizar o estoque após uma venda; (d) dashboard de vendas da diretoria.
 2. Monte o star schema (tabelas, colunas e grão) para um app de delivery: pedidos, restaurantes, clientes, entregadores.

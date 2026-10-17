@@ -1,4 +1,4 @@
-# Fundamentos — Apostila Prática
+# Fundamentos: Apostila Prática
 
 Roadmap Analista e Engenheiro de Dados · Semanas 01 a 03
 
@@ -37,11 +37,11 @@ jupyter lab
 
 | Semana | Tema |
 |---|---|
-| 01 | Tema 1 — Python para dados |
-| 02 | Tema 2 — Estatística essencial |
-| 03 | Tema 3 — Ferramentas do dia a dia + projeto |
+| 01 | Tema 1: Python para dados |
+| 02 | Tema 2: Estatística essencial |
+| 03 | Tema 3: Ferramentas do dia a dia + projeto |
 
-## Tema 1 — Python para dados
+## Tema 1: Python para dados
 
 **Objetivo:** escrever Python simples e limpo para ler, transformar e salvar dados.
 
@@ -157,7 +157,7 @@ Ferramentas mais modernas como **uv** e **Poetry** fazem o mesmo de forma mais r
 - Use células Markdown para explicar o raciocínio.
 - Quando o código vira rotina, mova para um arquivo `.py` (notebook não é bom para produção).
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Com a lista `pedidos` acima: calcule o total pago, a quantidade de pedidos cancelados e o maior valor.
 2. Escreva uma função `agrupar_total(pedidos, chave)` que retorna um dicionário com a soma de `valor` por `chave` (ex.: por cliente, por status).
@@ -165,7 +165,7 @@ Ferramentas mais modernas como **uv** e **Poetry** fazem o mesmo de forma mais r
 4. Use uma compreensão de lista para obter os nomes **únicos** dos clientes que têm pedido pago, em ordem alfabética.
 5. Crie um ambiente virtual, instale `pandas` e gere o `requirements.txt`.
 
-## Tema 2 — Estatística essencial
+## Tema 2: Estatística essencial
 
 **Objetivo:** resumir dados corretamente e não tirar conclusões erradas.
 
@@ -218,7 +218,7 @@ Analisar uma amostra só funciona se ela **representa** a população.
 
 > **Cuidado! Cai na entrevista:** p-valor **não** é "a probabilidade de a hipótese ser verdadeira". E "estatisticamente significativo" não quer dizer "importante": uma diferença de 0,01% pode ser significativa com milhões de usuários e não valer nada para o negócio.
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Tempos de entrega (dias): `[2, 3, 3, 4, 3, 2, 15, 3, 4, 2]`. Calcule média, mediana e moda. Qual você reportaria ao diretor e por quê?
 2. Para a mesma lista, calcule Q1, Q3, IQR e diga se 15 é outlier pela regra do 1,5×IQR.
@@ -226,7 +226,7 @@ Analisar uma amostra só funciona se ela **representa** a população.
 4. Uma pesquisa de satisfação foi enviada por e-mail e 8% responderam; 90% estavam satisfeitos. Quais vieses podem existir?
 5. Explique, para alguém de negócios, o que significa "p-valor = 0,03" num teste A/B.
 
-## Tema 3 — Ferramentas do dia a dia
+## Tema 3: Ferramentas do dia a dia
 
 **Objetivo:** trabalhar de forma reproduzível, versionada e automatizável.
 
@@ -304,7 +304,7 @@ pd.read_parquet("vendas.parquet", columns=["data", "valor"])   # lê só 2 colun
 
 > **Cuidado! Cai na entrevista:** "Por que Parquet é melhor para analytics?" Armazenamento **colunar**: consultas analíticas leem poucas colunas de muitas linhas, e o Parquet lê só essas colunas; além disso, colunas com valores parecidos comprimem muito bem.
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Baixe um CSV grande de dados abertos e, **só com o terminal**, descubra: número de linhas, o cabeçalho e quantas linhas contêm uma palavra específica.
 2. Crie um repositório com `.gitignore` adequado para um projeto de dados e faça 3 commits com mensagens claras.

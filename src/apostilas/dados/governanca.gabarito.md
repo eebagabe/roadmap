@@ -1,4 +1,4 @@
-# Gabarito — Governança e Arquitetura
+# Gabarito: Governança e Arquitetura
 
 Abra só depois de tentar. As referências à LGPD são didáticas; para casos reais, consulte o encarregado de dados (DPO) e o jurídico da empresa.
 
