@@ -37,7 +37,7 @@ export default function ApostilaPage() {
       type="button"
       onClick={() => setParams(k === 'gabarito' ? { aba: 'gabarito' } : {})}
       className={`rounded-full px-4 py-1.5 text-sm font-semibold transition ${
-        kind === k ? 'bg-ink text-white' : 'text-gray-600 hover:bg-black/5'
+        kind === k ? 'bg-ink text-white dark:bg-white dark:text-ink' : 'text-gray-600 dark:text-gray-400 hover:bg-black/5 dark:hover:bg-white/10'
       }`}
     >
       {label}
@@ -47,14 +47,14 @@ export default function ApostilaPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
       <div className="flex flex-wrap items-center justify-between gap-3 print:hidden">
-        <Link to={`/roadmap/${roadmapId}#secao-${sectionId}`} className="text-sm font-medium text-gray-600 hover:text-ink">
+        <Link to={`/roadmap/${roadmapId}#secao-${sectionId}`} className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-ink dark:hover:text-white">
           ← {roadmap.icon} {roadmap.short}
         </Link>
-        <div className="flex items-center gap-1 rounded-full border border-black/10 bg-white p-1 shadow-sm">
+        <div className="flex items-center gap-1 rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-surface-dark p-1 shadow-sm">
           {tab('apostila', 'Apostila')}
           {hasGabarito && tab('gabarito', 'Gabarito')}
         </div>
-        <button type="button" onClick={() => window.print()} className="text-sm font-medium text-gray-600 hover:text-ink">
+        <button type="button" onClick={() => window.print()} className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-ink dark:hover:text-white">
           Imprimir / PDF
         </button>
       </div>
@@ -69,17 +69,17 @@ export default function ApostilaPage() {
       <div className="mt-8 grid gap-10 lg:grid-cols-[14rem_1fr]">
         <aside className="hidden lg:block print:hidden">
           <nav className="sticky top-24 space-y-1 text-sm">
-            <p className="mb-2 font-mono text-[10px] font-semibold tracking-widest text-gray-500 uppercase">Sumário</p>
+            <p className="mb-2 font-mono text-[10px] font-semibold tracking-widest text-gray-500 dark:text-gray-400 uppercase">Sumário</p>
             {toc.map((h) => (
-              <a key={h.id} href={`#${h.id}`} className="block rounded px-2 py-1 text-gray-600 hover:bg-black/5 hover:text-ink">
+              <a key={h.id} href={`#${h.id}`} className="block rounded px-2 py-1 text-gray-600 dark:text-gray-400 hover:bg-black/5 dark:hover:bg-white/10 hover:text-ink dark:hover:text-white">
                 {h.text}
               </a>
             ))}
           </nav>
         </aside>
 
-        <article className="min-w-0 rounded-2xl border border-black/5 bg-white px-5 py-8 shadow-sm sm:px-10 print:border-0 print:shadow-none">
-          {source === undefined ? <p className="text-gray-500">Carregando…</p> : <Markdown source={source} />}
+        <article className="min-w-0 rounded-2xl border border-black/5 dark:border-white/10 bg-white dark:bg-surface-dark px-5 py-8 shadow-sm sm:px-10 print:border-0 print:shadow-none">
+          {source === undefined ? <p className="text-gray-500 dark:text-gray-400">Carregando…</p> : <Markdown source={source} />}
         </article>
       </div>
 
@@ -89,7 +89,7 @@ export default function ApostilaPage() {
             <Link
               key={s.id}
               to={`/roadmap/${roadmapId}/apostila/${s.id}`}
-              className={`rounded-xl border border-black/10 bg-white px-4 py-3 font-medium shadow-sm hover:bg-black/5 ${i ? 'ml-auto' : ''}`}
+              className={`rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-surface-dark px-4 py-3 font-medium shadow-sm hover:bg-black/5 dark:hover:bg-white/10 ${i ? 'ml-auto' : ''}`}
             >
               {i ? `${s.title} →` : `← ${s.title}`}
             </Link>
