@@ -34,13 +34,13 @@ export function RoadmapPage() {
           <span aria-hidden>{roadmap.icon}</span>
           {roadmap.title}
         </h1>
-        <p className="mt-2 text-sm text-gray-500">{totalWeeks(roadmap)} semanas</p>
-        <p className="mt-4 text-gray-700">
+        <p className="mt-2 text-sm text-gray-500 dark:text-gray-400">{totalWeeks(roadmap)} semanas</p>
+        <p className="mt-4 text-gray-700 dark:text-gray-300">
           <strong>Objetivo:</strong> {roadmap.objective}
         </p>
 
         <div className="mx-auto mt-6 max-w-md">
-          <div className="mb-1.5 flex justify-between font-mono text-xs text-gray-500">
+          <div className="mb-1.5 flex justify-between font-mono text-xs text-gray-500 dark:text-gray-400">
             <span>Seu progresso</span>
             <span>
               {doneCount}/{keys.length}
@@ -53,14 +53,14 @@ export function RoadmapPage() {
           <button
             type="button"
             onClick={() => progress.setCollapsed(allWeekKeys, anyExpanded)}
-            className="rounded-full border border-black/10 bg-white px-4 py-1.5 font-medium shadow-sm hover:bg-black/5"
+            className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-surface-dark px-4 py-1.5 font-medium shadow-sm hover:bg-black/5 dark:hover:bg-white/10"
           >
             {anyExpanded ? '✕ Recolher tudo' : '↕ Expandir tudo'}
           </button>
-          <a href="#empresas" className="rounded-full px-4 py-1.5 font-medium text-gray-600 hover:bg-black/5">
+          <a href="#empresas" className="rounded-full px-4 py-1.5 font-medium text-gray-600 dark:text-gray-400 hover:bg-black/5 dark:hover:bg-white/10">
             Empresas
           </a>
-          <a href="#projetos" className="rounded-full px-4 py-1.5 font-medium text-gray-600 hover:bg-black/5">
+          <a href="#projetos" className="rounded-full px-4 py-1.5 font-medium text-gray-600 dark:text-gray-400 hover:bg-black/5 dark:hover:bg-white/10">
             Projetos
           </a>
           <button type="button" onClick={reset} className="rounded-full px-4 py-1.5 font-medium text-gray-400 hover:text-rose-600">
@@ -69,8 +69,8 @@ export function RoadmapPage() {
         </div>
       </header>
 
-      <aside className="mx-auto mt-10 max-w-3xl rounded-2xl border border-black/5 bg-[#f4ece2] p-5 text-sm leading-relaxed text-gray-700">
-        <p className="mb-1 font-mono text-[10px] font-semibold tracking-widest text-gray-500 uppercase">Antes de começar</p>
+      <aside className="mx-auto mt-10 max-w-3xl rounded-2xl border border-black/5 dark:border-white/10 bg-[#f4ece2] dark:bg-[#252019] p-5 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+        <p className="mb-1 font-mono text-[10px] font-semibold tracking-widest text-gray-500 dark:text-gray-400 uppercase">Antes de começar</p>
         {roadmap.intro}
       </aside>
 
@@ -86,7 +86,7 @@ export function RoadmapPage() {
               hasApostila(roadmap.id, section.id) && (
                 <Link
                   to={`/roadmap/${roadmap.id}/apostila/${section.id}`}
-                  className="rounded-full border border-black/10 bg-white px-3 py-1 text-xs font-semibold shadow-sm hover:bg-black/5"
+                  className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-surface-dark px-3 py-1 text-xs font-semibold shadow-sm hover:bg-black/5 dark:hover:bg-white/10"
                 >
                   📘 Apostila e gabarito
                 </Link>

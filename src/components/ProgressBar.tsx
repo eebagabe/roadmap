@@ -1,6 +1,6 @@
 type Props = { value: number; total: number; className?: string; barClassName?: string }
 
-export function ProgressBar({ value, total, className = 'bg-black/10', barClassName = 'bg-ink' }: Props) {
+export function ProgressBar({ value, total, className = 'bg-black/10 dark:bg-white/10', barClassName = 'bg-ink dark:bg-gray-200' }: Props) {
   const pct = total === 0 ? 0 : Math.round((value / total) * 100)
   return (
     <div

@@ -72,7 +72,7 @@ export function SectionMap({ roadmapId, section, nextKey, nodeFooter }: Props) {
 
       <div className="relative grid grid-cols-1 gap-4 lg:grid-cols-[1fr_15rem_1fr] lg:gap-x-20 lg:gap-y-5">
         <div className={`z-10 flex flex-col items-center gap-2 lg:col-start-2 lg:row-start-1 lg:self-center ${ROW_SPAN[rows - 1]}`}>
-          <div ref={nodeRef} className="w-full rounded-2xl bg-ink px-5 py-4 text-white shadow-lg">
+          <div ref={nodeRef} className="w-full rounded-2xl bg-ink px-5 py-4 text-white shadow-lg dark:bg-surface-dark dark:ring-1 dark:ring-white/15">
             <div className="flex items-center justify-between gap-3">
               <h2 className="font-bold">{section.title}</h2>
               <span className="font-mono text-xs text-white/70">
@@ -81,7 +81,7 @@ export function SectionMap({ roadmapId, section, nextKey, nodeFooter }: Props) {
             </div>
             <ProgressBar value={doneCount} total={keys.length} className="mt-3 bg-white/15" barClassName="bg-emerald-400" />
           </div>
-          <p className="px-2 text-center text-xs text-gray-500">{section.summary}</p>
+          <p className="px-2 text-center text-xs text-gray-500 dark:text-gray-400">{section.summary}</p>
           {nodeFooter}
         </div>
 

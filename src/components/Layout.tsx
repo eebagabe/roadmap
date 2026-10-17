@@ -12,7 +12,7 @@ export function Layout() {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-30 print:hidden border-b border-black/5 bg-paper/85 backdrop-blur">
+      <header className="sticky top-0 z-30 print:hidden border-b border-black/5 dark:border-white/10 bg-paper/85 dark:bg-night/85 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center gap-6 overflow-x-auto px-4 py-3">
           <Link to="/" className="flex shrink-0 items-center gap-2 font-extrabold tracking-tight">
             <img src="/favicon.svg" alt="" className="h-7 w-7" />
@@ -27,7 +27,7 @@ export function Layout() {
                   to={`/roadmap/${r.id}`}
                   className={({ isActive }) =>
                     `shrink-0 rounded-full px-3 py-1.5 font-medium transition ${
-                      isActive ? 'bg-ink text-white' : 'text-gray-600 hover:bg-black/5'
+                      isActive ? 'bg-ink text-white dark:bg-white dark:text-ink' : 'text-gray-600 dark:text-gray-400 hover:bg-black/5 dark:hover:bg-white/10'
                     }`
                   }
                 >
@@ -43,7 +43,7 @@ export function Layout() {
       <main className="flex-1">
         <Outlet />
       </main>
-      <footer className="print:hidden border-t border-black/5 py-8 text-center text-sm text-gray-500">
+      <footer className="print:hidden border-t border-black/5 dark:border-white/10 py-8 text-center text-sm text-gray-500 dark:text-gray-400">
         Seu progresso fica salvo neste navegador.
       </footer>
     </div>

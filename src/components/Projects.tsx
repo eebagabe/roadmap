@@ -3,9 +3,9 @@ import { progress, useProgress } from '../lib/progress'
 import { Checkbox } from './Checkbox'
 
 const LEVEL_STYLE: Record<ProjectLevel, string> = {
-  Iniciante: 'bg-emerald-50 text-emerald-700',
-  Intermediário: 'bg-amber-50 text-amber-700',
-  Avançado: 'bg-rose-50 text-rose-700',
+  Iniciante: 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300',
+  Intermediário: 'bg-amber-50 text-amber-700 dark:bg-amber-950/50 dark:text-amber-300',
+  Avançado: 'bg-rose-50 text-rose-700 dark:bg-rose-950/50 dark:text-rose-300',
 }
 
 export function Projects({ roadmapId, projects }: { roadmapId: string; projects: Project[] }) {
@@ -13,7 +13,7 @@ export function Projects({ roadmapId, projects }: { roadmapId: string; projects:
   return (
     <section id="projetos" className="scroll-mt-24">
       <h2 className="text-2xl font-bold tracking-tight">Projetos para praticar</h2>
-      <p className="mt-1 text-sm text-gray-600">
+      <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">
         Ler não basta: construa. Comece pelos iniciantes e suba de nível. Coloque cada um no GitHub com um README explicando o
         que você aprendeu.
       </p>
@@ -24,7 +24,7 @@ export function Projects({ roadmapId, projects }: { roadmapId: string; projects:
           return (
             <li
               key={p.id}
-              className={`flex flex-col rounded-2xl border bg-white p-5 shadow-sm ${checked ? 'border-emerald-200' : 'border-black/5'}`}
+              className={`flex flex-col rounded-2xl border bg-white dark:bg-surface-dark p-5 shadow-sm ${checked ? 'border-emerald-200 dark:border-emerald-800' : 'border-black/5 dark:border-white/10'}`}
             >
               <div className="flex items-start gap-3">
                 <div className="pt-0.5">
@@ -35,12 +35,12 @@ export function Projects({ roadmapId, projects }: { roadmapId: string; projects:
                     <h3 className="font-semibold">{p.title}</h3>
                     <span className={`rounded-full px-2 py-0.5 text-[11px] font-semibold ${LEVEL_STYLE[p.level]}`}>{p.level}</span>
                   </div>
-                  <p className="mt-1.5 text-sm text-gray-600">{p.description}</p>
+                  <p className="mt-1.5 text-sm text-gray-600 dark:text-gray-400">{p.description}</p>
                 </div>
               </div>
               <ul className="mt-4 flex flex-wrap gap-1.5 pl-8">
                 {p.skills.map((s) => (
-                  <li key={s} className="rounded-md bg-black/5 px-2 py-0.5 font-mono text-[11px] text-gray-700">
+                  <li key={s} className="rounded-md bg-black/5 dark:bg-white/10 px-2 py-0.5 font-mono text-[11px] text-gray-700 dark:text-gray-300">
                     {s}
                   </li>
                 ))}

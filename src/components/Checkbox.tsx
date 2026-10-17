@@ -13,7 +13,7 @@ export function Checkbox({ checked, onChange, label, size = 'sm' }: Props) {
         onChange()
       }}
       className={`grid shrink-0 place-items-center border transition ${box} ${
-        checked ? 'border-emerald-600 bg-emerald-600 text-white' : 'border-gray-300 bg-white hover:border-gray-500'
+        checked ? 'border-emerald-600 bg-emerald-600 text-white' : 'border-gray-300 bg-white hover:border-gray-500 dark:border-gray-600 dark:bg-transparent'
       }`}
     >
       {checked && (

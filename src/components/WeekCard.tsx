@@ -22,8 +22,8 @@ export const WeekCard = forwardRef<HTMLDivElement, Props>(function WeekCard({ ro
     <div
       ref={ref}
       id={`semana-${week.id}`}
-      className={`scroll-mt-24 rounded-2xl border bg-white shadow-sm transition ${
-        complete ? 'border-emerald-200' : 'border-black/5'
+      className={`scroll-mt-24 rounded-2xl border bg-white dark:bg-surface-dark shadow-sm transition ${
+        complete ? 'border-emerald-200 dark:border-emerald-800' : 'border-black/5 dark:border-white/10'
       } ${className}`}
     >
       <div
@@ -37,17 +37,17 @@ export const WeekCard = forwardRef<HTMLDivElement, Props>(function WeekCard({ ro
           onChange={() => progress.setTopics(keys, !complete)}
         />
         <div className="min-w-0 flex-1">
-          <p className="font-mono text-[10px] font-semibold tracking-widest text-gray-500 uppercase">Semana {pad(week.number)}</p>
-          <h3 className={`text-sm font-semibold ${complete ? 'text-emerald-700' : ''}`}>{week.title}</h3>
+          <p className="font-mono text-[10px] font-semibold tracking-widest text-gray-500 dark:text-gray-400 uppercase">Semana {pad(week.number)}</p>
+          <h3 className={`text-sm font-semibold ${complete ? 'text-emerald-700 dark:text-emerald-400' : ''}`}>{week.title}</h3>
         </div>
-        <span className="font-mono text-xs text-gray-500">
+        <span className="font-mono text-xs text-gray-500 dark:text-gray-400">
           {doneCount}/{keys.length}
         </span>
         <button
           type="button"
           aria-expanded={!isCollapsed}
           aria-label={isCollapsed ? 'Expandir semana' : 'Recolher semana'}
-          className="rounded p-1 text-gray-500 hover:bg-black/5"
+          className="rounded p-1 text-gray-500 dark:text-gray-400 hover:bg-black/5 dark:hover:bg-white/10"
         >
           <svg
             viewBox="0 0 16 16"
@@ -70,13 +70,13 @@ export const WeekCard = forwardRef<HTMLDivElement, Props>(function WeekCard({ ro
                 <label
                   id={`topico-${key}`}
                   className={`flex cursor-pointer items-center gap-2 rounded-lg border px-2.5 py-1.5 text-sm transition ${
-                    checked ? 'border-emerald-100 bg-emerald-50 text-emerald-800' : 'border-black/10 hover:border-black/25'
+                    checked ? 'border-emerald-100 bg-emerald-50 text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300' : 'border-black/10 dark:border-white/10 hover:border-black/25 dark:hover:border-white/30'
                   }`}
                 >
                   <Checkbox checked={checked} label={topic} onChange={() => progress.toggleTopic(key)} />
                   <span className={checked ? 'line-through decoration-emerald-600/40' : ''}>{topic}</span>
                   {key === nextKey && (
-                    <span className="rounded-full bg-ink px-2 py-0.5 text-[10px] font-semibold text-white">Próximo</span>
+                    <span className="rounded-full bg-ink px-2 py-0.5 dark:bg-white dark:text-ink text-[10px] font-semibold text-white">Próximo</span>
                   )}
                 </label>
               </li>
