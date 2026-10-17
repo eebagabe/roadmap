@@ -1,6 +1,7 @@
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 import { roadmaps } from '../data/roadmaps'
+import { ThemeToggle } from './ThemeToggle'
 
 export function Layout() {
   const { pathname, hash } = useLocation()
@@ -34,6 +35,9 @@ export function Layout() {
                 </NavLink>
               ))}
           </nav>
+          <div className="ml-auto">
+            <ThemeToggle />
+          </div>
         </div>
       </header>
       <main className="flex-1">
