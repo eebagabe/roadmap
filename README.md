@@ -10,7 +10,7 @@ Roadmaps de estudo em português, inspirados no [roadmap.sh](https://roadmap.sh)
 | ⚛️ Frontend React | 18 | Fundamentos da Web, JavaScript e TypeScript, React, Tailwind CSS, Ecossistema React, Performance e Arquitetura |
 | 🧪 QA | 15 | Fundamentos de Teste, Testes Manuais, Automação Web, Testes de API, Performance e Segurança, CI/CD e Qualidade Contínua |
 | 📊 Analista e Engenheiro de Dados | 19 | Fundamentos, SQL e Modelagem, Análise de Dados e BI, Engenharia de Dados, Cloud e Big Data, Governança e Arquitetura |
-| 🤖 LLMs e Agents | — | Em breve |
+| 🤖 LLMs e Agents | - | Em breve |
 
 ## Funcionalidades
 
