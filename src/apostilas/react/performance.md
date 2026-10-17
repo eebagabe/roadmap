@@ -1,4 +1,4 @@
-# Performance e Arquitetura — Apostila Prática
+# Performance e Arquitetura: Apostila Prática
 
 Roadmap Frontend React · Semanas 17 e 18
 
@@ -24,10 +24,10 @@ Um app que funciona não é o mesmo que um app **rápido, organizado e fácil de
 
 | Semana | Tema |
 |---|---|
-| 17 | Tema 1 — Performance |
-| 18 | Tema 2 — Arquitetura e deploy + projeto final |
+| 17 | Tema 1: Performance |
+| 18 | Tema 2: Arquitetura e deploy + projeto final |
 
-## Tema 1 — Performance
+## Tema 1: Performance
 
 **Objetivo:** medir, encontrar gargalos e aplicar as otimizações certas.
 
@@ -144,7 +144,7 @@ function ListaGigante({ itens }: { itens: Filme[] }) {
 }
 ```
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Rode o Lighthouse (mobile) no seu projeto e anote LCP, CLS e a nota de Performance. Corrija os 3 principais itens e meça de novo.
 2. Use o Profiler para encontrar um componente que re-renderiza sem necessidade. Corrija com uma das 3 técnicas da seção 1.3 e prove com o Profiler.
@@ -152,7 +152,7 @@ function ListaGigante({ itens }: { itens: Filme[] }) {
 4. Divida o código do seu app por rotas com `lazy` e compare o tamanho do JavaScript inicial antes e depois (aba Network).
 5. Renderize 10 mil itens sem virtualização e com virtualização. Compare o tempo de montagem e a fluidez da rolagem.
 
-## Tema 2 — Arquitetura e deploy
+## Tema 2: Arquitetura e deploy
 
 **Objetivo:** organizar o projeto para crescer, automatizar a qualidade e publicar.
 
@@ -265,7 +265,7 @@ Exemplo rápido, **autocomplete de busca**:
 - Destacar o trecho buscado no resultado.
 - Mínimo de 2 caracteres; estado vazio "nenhum resultado".
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Reorganize seu projeto de filmes por features. O que ficou mais fácil de encontrar?
 2. Um colega colocou `VITE_STRIPE_SECRET_KEY` no `.env` do front. Explique o problema e a solução.
@@ -273,7 +273,7 @@ Exemplo rápido, **autocomplete de busca**:
 4. Faça o deploy na Vercel e teste: recarregar a página numa rota interna funciona?
 5. Faça o Frontend System Design de um **feed de notícias com scroll infinito** seguindo o roteiro 2.6.
 
-## Projeto da etapa — Projeto final do roadmap
+## Projeto da etapa: projeto final do roadmap
 
 **Escolha um dos projetos avançados da página do roadmap** (Loja virtual com Next.js ou Design system próprio) e entregue com:
 

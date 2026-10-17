@@ -1,4 +1,4 @@
-# Gabarito — JavaScript e TypeScript
+# Gabarito: JavaScript e TypeScript
 
 Abra só depois de tentar.
 

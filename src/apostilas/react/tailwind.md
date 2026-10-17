@@ -1,4 +1,4 @@
-# Tailwind CSS — Apostila Prática
+# Tailwind CSS: Apostila Prática
 
 Roadmap Frontend React · Semanas 11 e 12
 
@@ -24,10 +24,10 @@ Tailwind é um framework CSS **utility-first**: em vez de escrever classes como 
 
 | Semana | Tema |
 |---|---|
-| 11 | Tema 1 — Tailwind na prática |
-| 12 | Tema 2 — Componentes e design system + projeto |
+| 11 | Tema 1: Tailwind na prática |
+| 12 | Tema 2: Componentes e design system + projeto |
 
-## Tema 1 — Tailwind na prática
+## Tema 1: Tailwind na prática
 
 **Objetivo:** estilizar telas responsivas e com dark mode usando só utilitários.
 
@@ -182,7 +182,7 @@ Para um botão de alternar tema (classe `dark` no `<html>`), configure no CSS:
 document.documentElement.classList.toggle('dark')
 ```
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Traduza para Tailwind: `display:flex; flex-direction:column; align-items:center; gap:16px; padding:24px; border-radius:12px; background:white; box-shadow: pequena`.
 2. Faça um card de produto: imagem no topo, nome (no máximo 2 linhas), preço em destaque, botão. No hover, o card sobe levemente e a sombra aumenta.
@@ -190,7 +190,7 @@ document.documentElement.classList.toggle('dark')
 4. Crie um botão com estados: hover, foco visível pelo teclado, desabilitado e carregando (com um spinner `animate-spin`).
 5. Adicione dark mode controlado por um botão, salvando a escolha no localStorage.
 
-## Tema 2 — Componentes e design system
+## Tema 2: Componentes e design system
 
 **Objetivo:** organizar o Tailwind em componentes reutilizáveis e com tema próprio.
 
@@ -307,7 +307,7 @@ O que componentes interativos precisam ter:
 
 Anime `transform` e `opacity` (são baratos). Respeite `prefers-reduced-motion` com `motion-safe:` e `motion-reduce:`.
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Defina um tema com sua cor de marca (tons 50, 100, 500, 600, 700), uma fonte do Google Fonts e um raio padrão.
 2. Crie a função `cn` e um componente `Badge` com variantes `sucesso`, `aviso`, `erro` e `neutro`.

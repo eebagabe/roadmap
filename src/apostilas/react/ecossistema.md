@@ -1,4 +1,4 @@
-# Ecossistema React — Apostila Prática
+# Ecossistema React: Apostila Prática
 
 Roadmap Frontend React · Semanas 13 a 16
 
@@ -23,12 +23,12 @@ React sozinho resolve a interface. Num projeto real você também precisa **busc
 
 | Semana | Tema |
 |---|---|
-| 13 | Tema 1 — Dados do servidor |
-| 14 | Tema 2 — Estado global |
-| 15 | Tema 3 — Testes no frontend |
-| 16 | Tema 4 — Next.js + projeto |
+| 13 | Tema 1: Dados do servidor |
+| 14 | Tema 2: Estado global |
+| 15 | Tema 3: Testes no frontend |
+| 16 | Tema 4: Next.js + projeto |
 
-## Tema 1 — Dados do servidor
+## Tema 1: Dados do servidor
 
 **Objetivo:** buscar, guardar em cache e alterar dados da API sem reinventar a roda.
 
@@ -125,7 +125,7 @@ const filmes = data?.pages.flatMap(p => p.itens) ?? []
 
 Use um `IntersectionObserver` num elemento no fim da lista para chamar `fetchNextPage` quando ele aparecer na tela.
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Classifique como estado do cliente ou do servidor: (a) lista de pedidos; (b) aba selecionada; (c) perfil do usuário logado; (d) itens do carrinho ainda não salvos; (e) cotação do dólar.
 2. Migre a busca de filmes do seu projeto de `useEffect` para `useQuery`. Quantas linhas sumiram?
@@ -133,7 +133,7 @@ Use um `IntersectionObserver` num elemento no fim da lista para chamar `fetchNex
 4. Implemente "favoritar" com atualização otimista e rollback em caso de erro.
 5. Implemente scroll infinito na lista de filmes.
 
-## Tema 2 — Estado global
+## Tema 2: Estado global
 
 **Objetivo:** decidir onde cada estado mora e usar uma ferramenta simples quando precisar de estado global.
 
@@ -209,7 +209,7 @@ Filtros, busca, página atual, aba selecionada: coloque na URL (`useSearchParams
 - Versione o formato (`carrinho:v2`) para não quebrar quando a estrutura mudar.
 - **Nunca** guarde token sensível no localStorage se puder evitar: qualquer script com XSS lê. Prefira cookies `HttpOnly`.
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Para cada dado, diga onde ele deve morar: (a) termo de busca; (b) se o menu lateral está aberto; (c) carrinho; (d) dados do produto; (e) preferência de tema.
 2. Crie a store do carrinho com Zustand e mostre a quantidade no cabeçalho e a lista numa página.
@@ -217,7 +217,7 @@ Filtros, busca, página atual, aba selecionada: coloque na URL (`useSearchParams
 4. Coloque página e ordenação da lista de filmes na URL.
 5. O que acontece com o carrinho salvo se você mudar o formato do item (por exemplo, `preco` vira `precoCentavos`)? Como evitar problemas?
 
-## Tema 3 — Testes no frontend
+## Tema 3: Testes no frontend
 
 **Objetivo:** testar componentes do jeito que o usuário usa.
 
@@ -328,7 +328,7 @@ test('usuário busca e favorita um filme', async ({ page }) => {
 
 > **Cuidado! Cai na entrevista:** "O que você testa no front?" Lógica pura com testes unitários; componentes com Testing Library (comportamento, não implementação); fluxos críticos (login, checkout) com E2E. Poucos E2E, porque são lentos e mais frágeis.
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Escreva testes para o reducer de tarefas (adicionar, alternar, remover) com Vitest.
 2. Teste o componente de busca: digitar um termo e verificar que os resultados aparecem (use MSW).
@@ -336,7 +336,7 @@ test('usuário busca e favorita um filme', async ({ page }) => {
 4. Teste que a mensagem "Nenhum favorito" aparece quando a lista está vazia e **não** aparece quando há itens.
 5. Escreva um teste E2E com Playwright para o fluxo principal do seu projeto.
 
-## Tema 4 — Next.js
+## Tema 4: Next.js
 
 **Objetivo:** entender por que usar um framework e os conceitos principais do Next.js.
 
@@ -439,7 +439,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 }
 ```
 
-### Atividades de fixação — Tema 4
+### Atividades de fixação do Tema 4
 
 1. Explique a diferença entre uma SPA com Vite e uma página Next.js com Server Components para alguém de produto.
 2. Para cada página, escolha CSR, SSR, SSG ou ISR: (a) blog; (b) página de produto de e-commerce; (c) extrato bancário; (d) termos de uso; (e) dashboard de analytics logado.

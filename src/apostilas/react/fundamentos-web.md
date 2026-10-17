@@ -1,4 +1,4 @@
-# Fundamentos da Web — Apostila Prática
+# Fundamentos da Web: Apostila Prática
 
 Roadmap Frontend React · Semanas 01 a 03
 
@@ -35,11 +35,11 @@ git config --global user.email "voce@email.com"
 
 | Semana | Tema |
 |---|---|
-| 01 | Tema 1 — Como a web e o navegador funcionam |
-| 02 | Tema 2 — HTML semântico e acessibilidade |
-| 03 | Tema 3 — CSS e layouts + projeto |
+| 01 | Tema 1: Como a web e o navegador funcionam |
+| 02 | Tema 2: HTML semântico e acessibilidade |
+| 03 | Tema 3: CSS e layouts + projeto |
 
-## Tema 1 — Como a web e o navegador funcionam
+## Tema 1: Como a web e o navegador funcionam
 
 **Objetivo:** entender o caminho de uma URL até a página aparecer na tela.
 
@@ -113,7 +113,7 @@ git push -u origin main
 
 Faça commits pequenos e com mensagens claras. Recrutador olha.
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Abra a aba Network, recarregue um site grande (ex.: um portal de notícias) e anote: quantas requisições, quanto foi transferido, qual o arquivo mais pesado.
 2. Explique, em até 6 passos, o que acontece entre digitar a URL e ver a página.
@@ -121,7 +121,7 @@ Faça commits pequenos e com mensagens claras. Recrutador olha.
 4. Por que animar `left` é pior do que animar `transform: translateX()`?
 5. Crie um repositório no GitHub chamado `estudos-front` e faça o primeiro commit com um `index.html`.
 
-## Tema 2 — HTML semântico e acessibilidade
+## Tema 2: HTML semântico e acessibilidade
 
 **Objetivo:** escrever HTML que faz sentido para pessoas, leitores de tela e buscadores.
 
@@ -233,7 +233,7 @@ Checklist básico:
 - URLs legíveis (`/produtos/tenis-azul`).
 - Site rápido e responsivo (o Google considera).
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Reescreva com HTML semântico:
    ```html
@@ -245,7 +245,7 @@ Checklist básico:
 4. Escreva o `alt` para: (a) foto de produto; (b) logo da empresa que é um link para a home; (c) ícone decorativo ao lado de um texto que já diz tudo.
 5. Rode o Lighthouse (aba Accessibility) no seu formulário e corrija o que aparecer.
 
-## Tema 3 — CSS e layouts
+## Tema 3: CSS e layouts
 
 **Objetivo:** dominar o box model, Flexbox e Grid e fazer layouts responsivos.
 
@@ -357,7 +357,7 @@ A linha `repeat(auto-fill, minmax(220px, 1fr))` cria uma galeria responsiva **se
 
 Variáveis CSS são a base de temas e dark mode, inclusive no Tailwind v4.
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Qual cor o parágrafo terá? Explique.
    ```html

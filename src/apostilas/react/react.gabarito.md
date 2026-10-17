@@ -1,4 +1,4 @@
-# Gabarito — React
+# Gabarito: React
 
 Abra só depois de tentar.
 

@@ -1,4 +1,4 @@
-# React — Apostila Prática
+# React: Apostila Prática
 
 Roadmap Frontend React · Semanas 07 a 10
 
@@ -33,12 +33,12 @@ npm run dev
 
 | Semana | Tema |
 |---|---|
-| 07 | Tema 1 — Componentes, JSX e props |
-| 08 | Tema 2 — Estado, eventos e efeitos |
-| 09 | Tema 3 — Hooks e padrões |
-| 10 | Tema 4 — Rotas e formulários + projeto |
+| 07 | Tema 1: Componentes, JSX e props |
+| 08 | Tema 2: Estado, eventos e efeitos |
+| 09 | Tema 3: Hooks e padrões |
+| 10 | Tema 4: Rotas e formulários + projeto |
 
-## Tema 1 — Componentes, JSX e props
+## Tema 1: Componentes, JSX e props
 
 **Objetivo:** criar componentes, passar dados entre eles e renderizar listas.
 
@@ -120,7 +120,7 @@ function Caixa({ children }: { children: React.ReactNode }) {
 
 A `key` diz ao React **qual item é qual** entre renderizações. Use um ID estável e único. **Não** use o índice do array se a lista pode ser reordenada, filtrada ou ter itens inseridos: o React vai confundir os itens (e o estado interno deles, como o texto de um input).
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Crie um componente `Avatar` que recebe `nome` e `url` e mostra a imagem com `alt` adequado. Se `url` não vier, mostra as iniciais.
 2. Converta este HTML em JSX válido: `<label for="email" class="rotulo">E-mail</label><input id="email" type="email" required><img src="logo.png">`.
@@ -128,7 +128,7 @@ A `key` diz ao React **qual item é qual** entre renderizações. Use um ID est�
 4. Explique o bug de usar `index` como `key` numa lista em que você pode remover o primeiro item e cada item tem um `<input>`.
 5. Crie um componente `Card` que aceita `titulo` e `children`, e use-o para três conteúdos diferentes.
 
-## Tema 2 — Estado, eventos e efeitos
+## Tema 2: Estado, eventos e efeitos
 
 **Objetivo:** fazer a interface reagir a ações do usuário e sincronizar com o mundo externo.
 
@@ -257,7 +257,7 @@ Quando um componente re-renderiza, **todos os filhos** re-renderizam também (po
 
 Em desenvolvimento, o `<StrictMode>` monta, desmonta e monta de novo cada componente, e roda os efeitos duas vezes. É de propósito: revela efeitos sem limpeza. Em produção roda uma vez.
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Faça uma lista de tarefas: adicionar, marcar como feita, remover. Tudo com estado imutável.
 2. Encontre os 2 bugs:
@@ -280,7 +280,7 @@ Em desenvolvimento, o `<StrictMode>` monta, desmonta e monta de novo cada compon
    useEffect(() => { setFiltrados(produtos.filter(p => p.nome.includes(busca))) }, [produtos, busca])
    ```
 
-## Tema 3 — Hooks e padrões
+## Tema 3: Hooks e padrões
 
 **Objetivo:** usar os outros hooks e organizar lógica reutilizável.
 
@@ -398,7 +398,7 @@ Prefira compor peças pequenas a criar um componente gigante cheio de props `mos
 </Modal>
 ```
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Crie um campo de busca que recebe foco automaticamente quando a página abre (`useRef` + `useEffect`).
 2. Reescreva a lista de tarefas do Tema 2 com `useReducer`. Escreva um teste simples (só JavaScript) para o reducer.
@@ -413,7 +413,7 @@ Prefira compor peças pequenas a criar um componente gigante cheio de props `mos
    }
    ```
 
-## Tema 4 — Rotas e formulários
+## Tema 4: Rotas e formulários
 
 **Objetivo:** criar aplicações com várias páginas e formulários validados.
 
@@ -520,7 +520,7 @@ O mesmo schema Zod pode validar a resposta da API, unindo validação em runtime
 - Erros de requisição: estado de erro na tela, com mensagem útil e botão "tentar de novo".
 - Erros de formulário: perto do campo, com `role="alert"` e `aria-invalid`.
 
-### Atividades de fixação — Tema 4
+### Atividades de fixação do Tema 4
 
 1. Crie um app com 3 rotas: lista de produtos, detalhe (`/produtos/:id`) e uma página 404.
 2. Coloque o filtro de categoria da lista de produtos na URL (`?categoria=bebidas`) com `useSearchParams`.

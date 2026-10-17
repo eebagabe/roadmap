@@ -1,4 +1,4 @@
-# Gabarito — Ecossistema React
+# Gabarito: Ecossistema React
 
 Abra só depois de tentar.
 

@@ -1,4 +1,4 @@
-# Gabarito — Performance e Arquitetura
+# Gabarito: Performance e Arquitetura
 
 Abra só depois de tentar.
 

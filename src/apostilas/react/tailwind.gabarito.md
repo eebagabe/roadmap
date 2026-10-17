@@ -1,4 +1,4 @@
-# Gabarito — Tailwind CSS
+# Gabarito: Tailwind CSS
 
 Abra só depois de tentar.
 

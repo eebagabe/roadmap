@@ -1,4 +1,4 @@
-# JavaScript e TypeScript — Apostila Prática
+# JavaScript e TypeScript: Apostila Prática
 
 Roadmap Frontend React · Semanas 04 a 06
 
@@ -31,11 +31,11 @@ npm create vite@latest js-estudos -- --template vanilla-ts
 
 | Semana | Tema |
 |---|---|
-| 04 | Tema 1 — JavaScript essencial |
-| 05 | Tema 2 — Assíncrono e o navegador |
-| 06 | Tema 3 — TypeScript + projeto |
+| 04 | Tema 1: JavaScript essencial |
+| 05 | Tema 2: Assíncrono e o navegador |
+| 06 | Tema 3: TypeScript + projeto |
 
-## Tema 1 — JavaScript essencial
+## Tema 1: JavaScript essencial
 
 **Objetivo:** escrever JavaScript moderno sem cair nas pegadinhas da linguagem.
 
@@ -159,7 +159,7 @@ pessoa.olaArrow()          // arrow não tem this próprio: pega o de fora
 
 No React moderno (componentes de função), você quase não usa `this`. Mas cai em entrevista.
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Preveja o resultado: `[] + []`, `[] == false`, `null == undefined`, `null === undefined`, `typeof null`, `NaN === NaN`.
 2. Com o array `pedidos` acima: (a) nomes únicos de clientes; (b) o pedido de maior valor; (c) existe algum pedido acima de 250?
@@ -170,7 +170,7 @@ No React moderno (componentes de função), você quase não usa `this`. Mas cai
    ```
 5. Crie uma função `criarCarteira(saldoInicial)` que retorna `depositar`, `sacar` e `saldo`, sem permitir alterar o saldo direto de fora (use closure).
 
-## Tema 2 — Assíncrono e o navegador
+## Tema 2: Assíncrono e o navegador
 
 **Objetivo:** entender como o JavaScript faz várias coisas "ao mesmo tempo" com uma thread só.
 
@@ -277,7 +277,7 @@ export default function somar(a, b) { return a + b }
 import somar, { formatarPreco } from './utils.js'
 ```
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Preveja a ordem:
    ```js
@@ -292,7 +292,7 @@ import somar, { formatarPreco } from './utils.js'
 4. Faça uma busca com `input` que só chama a API 400 ms depois que a pessoa para de digitar (**debounce**).
 5. Por que usar `textContent` em vez de `innerHTML` para mostrar texto vindo do usuário?
 
-## Tema 3 — TypeScript
+## Tema 3: TypeScript
 
 **Objetivo:** tipar código JavaScript e React com confiança.
 
@@ -409,7 +409,7 @@ Opções importantes:
 
 > **Cuidado! Cai na entrevista:** TypeScript só existe **em tempo de desenvolvimento**. Os tipos somem no JavaScript final. Dados que vêm de fora (API, formulário) não são validados pelo TS: para isso use uma biblioteca de validação em runtime, como o **Zod**.
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Tipe esta função: `function buscar(lista, termo) { return lista.filter(p => p.nome.includes(termo)) }` para uma lista de `Produto`.
 2. Crie um tipo `EstadoRequisicao<T>` como union discriminada (ocioso, carregando, sucesso com dados `T`, erro com mensagem) e uma função que retorna um texto para cada estado.

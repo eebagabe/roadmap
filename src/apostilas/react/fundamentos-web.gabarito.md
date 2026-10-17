@@ -1,4 +1,4 @@
-# Gabarito — Fundamentos da Web
+# Gabarito: Fundamentos da Web
 
 Abra só depois de tentar.
 
