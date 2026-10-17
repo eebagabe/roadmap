@@ -74,6 +74,24 @@ export function RoadmapPage() {
         {roadmap.intro}
       </aside>
 
+      <aside className="mx-auto mt-4 max-w-3xl rounded-2xl border border-black/5 bg-white p-5 text-sm leading-relaxed text-gray-700 dark:border-white/10 dark:bg-surface-dark dark:text-gray-300">
+        <p className="mb-2 font-mono text-[10px] font-semibold tracking-widest text-gray-500 uppercase dark:text-gray-400">Como estudar</p>
+        <ul className="list-disc space-y-1.5 pl-5">
+          <li>
+            <strong>Todo o conteúdo fica na apostila</strong> de cada etapa: teoria, exemplos, atividades e gabarito. O mapa
+            serve para você se orientar e acompanhar o progresso.
+          </li>
+          <li>
+            <strong>Clique no nome de um tópico</strong> para abrir a apostila direto nele. A <strong>caixinha</strong> ao
+            lado marca o tópico como concluído (também dá para marcar dentro da apostila).
+          </li>
+          <li>
+            A apostila funciona como <strong>marca-página</strong>: ao abrir de novo, ela continua do primeiro tema que
+            você ainda não concluiu.
+          </li>
+        </ul>
+      </aside>
+
       <div className="relative mt-14 space-y-16">
         <div className="absolute top-0 bottom-0 left-1/2 hidden w-px -translate-x-1/2 bg-line/60 lg:block" aria-hidden />
         {sections.map((section) => (
@@ -88,7 +106,7 @@ export function RoadmapPage() {
                   to={`/roadmap/${roadmap.id}/apostila/${section.id}`}
                   className="rounded-full border border-black/10 dark:border-white/10 bg-white dark:bg-surface-dark px-3 py-1 text-xs font-semibold shadow-sm hover:bg-black/5 dark:hover:bg-white/10"
                 >
-                  📘 Apostila e gabarito
+                  📘 Abrir apostila da etapa
                 </Link>
               )
             }

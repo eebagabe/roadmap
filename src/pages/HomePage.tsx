@@ -13,8 +13,9 @@ export function HomePage() {
         <p className="text-xs font-semibold tracking-[0.2em] text-gray-500 dark:text-gray-400 uppercase">Estude com um caminho claro</p>
         <h1 className="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Roadmap</h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-          Escolha uma trilha, marque o que já estudou e siga semana a semana. Cada etapa tem uma apostila com teoria,
-          exercícios e gabarito, além de projetos para colocar a mão na massa.
+          Escolha uma trilha e siga semana a semana. Todo o conteúdo fica nas apostilas de cada etapa, com teoria,
+          exercícios e gabarito; o mapa mostra o caminho e guarda o seu progresso. No fim, projetos para colocar a mão na
+          massa.
         </p>
       </section>
 
