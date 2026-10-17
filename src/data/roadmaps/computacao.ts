@@ -6,7 +6,7 @@ export const computacao: Roadmap = {
   short: 'Ciência da Computação',
   icon: '🎓',
   accent: '#4f46e5',
-  status: 'em-breve',
+  status: 'disponivel',
   objective:
     'Do primeiro programa ao projeto final: o núcleo de Ciência da Computação de ITA, MIT, Harvard e Oxford numa trilha só, em português e gratuita.',
   intro:

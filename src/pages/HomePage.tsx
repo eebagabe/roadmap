@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { roadmaps } from '../data/roadmaps'
-import { BannerComputacao } from '../components/BannerComputacao'
 import { Idiomas } from '../components/Idiomas'
 import { ProgressBar } from '../components/ProgressBar'
 import { useProgress } from '../lib/progress'
@@ -20,8 +19,6 @@ export function HomePage() {
           massa.
         </p>
       </section>
-
-      <BannerComputacao />
 
       <section className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {roadmaps.map((r) => {
