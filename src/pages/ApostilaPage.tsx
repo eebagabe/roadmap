@@ -4,7 +4,7 @@ import { Markdown } from '../components/Markdown'
 import { TemaProgresso } from '../components/TemaProgresso'
 import { findRoadmap } from '../data/roadmaps'
 import { hasApostila, headings, loadApostila, type ApostilaKind } from '../lib/apostilas'
-import { useProgress } from '../lib/progress'
+import { getProgress, useProgress } from '../lib/progress'
 import { countDone, numberedSections, weekTopicKeys } from '../lib/roadmap'
 import { ancoraDoTopico, rolarAte, temaDoTitulo } from '../lib/temas'
 
@@ -13,6 +13,7 @@ export default function ApostilaPage() {
   const [params, setParams] = useSearchParams()
   const kind: ApostilaKind = params.get('aba') === 'gabarito' ? 'gabarito' : 'apostila'
   const [loaded, setLoaded] = useState<{ key: string; source?: string }>()
+  const [aviso, setAviso] = useState<{ tipo: 'retomado'; tema: number } | { tipo: 'concluida' } | null>(null)
 
   const roadmap = findRoadmap(roadmapId)
   const section = roadmap?.sections.find((s) => s.id === sectionId)
@@ -48,15 +49,27 @@ export default function ApostilaPage() {
     [kind, semanas, roadmapId],
   )
 
-  // Posiciona a leitura quando o conteúdo chega: link de tópico (?semana=&topico=) ou âncora (#).
+  // Posiciona a leitura quando o conteúdo chega: âncora (#), link de tópico (?semana=&topico=)
+  // ou marca-página (primeiro tema ainda não concluído).
   useEffect(() => {
-    if (!source || !section) return
+    if (!source || !semanas) return
+    setAviso(null)
     requestAnimationFrame(() => {
       if (hash) return rolarAte(decodeURIComponent(hash.slice(1)))
-      const tema = section.weeks.findIndex((w) => w.id === semana) + 1
-      if (kind === 'apostila' && tema > 0) {
+      if (kind !== 'apostila') return
+      const tema = semanas.findIndex((w) => w.id === semana) + 1
+      if (tema > 0) {
         const id = ancoraDoTopico(source, tema, topico)
         if (id) rolarAte(id, true)
+        return
+      }
+      const { done } = getProgress()
+      const pendente = semanas.findIndex((w) => countDone(weekTopicKeys(roadmapId, w), done) < w.topics.length)
+      if (pendente === -1) return setAviso({ tipo: 'concluida' })
+      if (pendente > 0) {
+        const id = ancoraDoTopico(source, pendente + 1)
+        if (id) rolarAte(id, true)
+        setAviso({ tipo: 'retomado', tema: pendente + 1 })
       }
     })
     // Só ao abrir a página ou trocar o destino; não a cada marcação de progresso.
@@ -133,6 +146,43 @@ export default function ApostilaPage() {
           {source === undefined ? <p className="text-gray-500 dark:text-gray-400">Carregando…</p> : <Markdown source={source} aposTitulo={aposTitulo} />}
         </article>
       </div>
+
+      {aviso && (
+        <div
+          role="status"
+          className="fixed right-4 bottom-4 z-40 flex max-w-sm items-start gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-900 shadow-lg print:hidden dark:border-emerald-900 dark:bg-emerald-950 dark:text-emerald-100"
+        >
+          <span aria-hidden>🔖</span>
+          <div className="flex-1">
+            {aviso.tipo === 'retomado' ? (
+              <>
+                <p className="font-semibold">Marca-página</p>
+                <p>
+                  Você já concluiu {aviso.tema === 2 ? 'o Tema 1' : `os Temas 1 a ${aviso.tema - 1}`}. Continuando do Tema {aviso.tema}.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    window.scrollTo({ top: 0 })
+                    setAviso(null)
+                  }}
+                  className="mt-2 font-semibold underline underline-offset-2"
+                >
+                  Ir para o início
+                </button>
+              </>
+            ) : (
+              <>
+                <p className="font-semibold">Etapa concluída</p>
+                <p>Você marcou todos os temas desta apostila. Bom momento para o projeto da etapa e o resumão.</p>
+              </>
+            )}
+          </div>
+          <button type="button" onClick={() => setAviso(null)} aria-label="Fechar aviso" className="opacity-60 hover:opacity-100">
+            ✕
+          </button>
+        </div>
+      )}
 
       <nav className="mt-10 flex justify-between gap-4 text-sm print:hidden">
         {neighbors.map((s, i) =>

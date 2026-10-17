@@ -61,6 +61,9 @@ export const progress = {
   },
 }
 
+/** Leitura pontual, sem assinar mudanças. */
+export const getProgress = () => state
+
 export function useProgress() {
   return useSyncExternalStore(subscribe, () => state)
 }
