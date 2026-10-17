@@ -2,9 +2,10 @@ import type { Roadmap, Section, Week } from '../data/types'
 import { topicKey } from './progress'
 
 export type NumberedWeek = Week & { number: number }
+export type NumberedSection = Omit<Section, 'weeks'> & { weeks: NumberedWeek[] }
 
 /** Numera as semanas de forma contínua ao longo do roadmap. */
-export function numberedSections(roadmap: Roadmap): (Section & { weeks: NumberedWeek[] })[] {
+export function numberedSections(roadmap: Roadmap): NumberedSection[] {
   let n = 0
   return roadmap.sections.map((s) => ({ ...s, weeks: s.weeks.map((w) => ({ ...w, number: ++n })) }))
 }
