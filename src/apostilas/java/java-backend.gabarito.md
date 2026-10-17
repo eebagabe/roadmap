@@ -1,4 +1,4 @@
-# Gabarito — Java Backend
+# Gabarito: Java Backend
 
 Abra só depois de tentar.
 

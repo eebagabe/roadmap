@@ -1,4 +1,4 @@
-# Gabarito — Fundamentos
+# Gabarito: Fundamentos
 
 Abra só depois de tentar. Questões "pessoais" não têm resposta única: o que importa é o raciocínio.
 

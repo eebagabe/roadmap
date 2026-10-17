@@ -1,4 +1,4 @@
-# LeetCode — Apostila Prática
+# LeetCode: Apostila Prática
 
 Roadmap Java Backend · Semanas 04 a 09
 
@@ -25,14 +25,14 @@ LeetCode é um site com problemas de programação. Empresas grandes (Mercado Li
 
 | Semana | Tema | Meta de problemas |
 |---|---|---|
-| 04 | Tema 1 — Big O e estruturas fundamentais | 6 |
-| 05 | Tema 2 — Hash Tables, Trees, Heaps e Graphs | 6 |
-| 06 | Tema 3 — Algoritmos fundamentais | 6 |
-| 07 | Tema 4 — Arrays e Strings: padrões | 8 |
-| 08 | Tema 5 — Trees, Graphs e recursão | 8 |
-| 09 | Tema 6 — Programação dinâmica e entrevista | 8 |
+| 04 | Tema 1: Big O e estruturas fundamentais | 6 |
+| 05 | Tema 2: Hash Tables, Trees, Heaps e Graphs | 6 |
+| 06 | Tema 3: Algoritmos fundamentais | 6 |
+| 07 | Tema 4: Arrays e Strings: padrões | 8 |
+| 08 | Tema 5: Trees, Graphs e recursão | 8 |
+| 09 | Tema 6: Programação dinâmica e entrevista | 8 |
 
-## Tema 1 — Big O e estruturas de dados fundamentais
+## Tema 1: Big O e estruturas de dados fundamentais
 
 **Objetivo:** medir quanto um algoritmo custa e conhecer as estruturas básicas.
 
@@ -117,7 +117,7 @@ boolean isValid(String s) {
 
 **Problemas do tema:** 206 Reverse Linked List, 21 Merge Two Sorted Lists, 141 Linked List Cycle, 20 Valid Parentheses, 155 Min Stack, 232 Implement Queue using Stacks.
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Diga o Big O de tempo de cada trecho:
    ```java
@@ -133,7 +133,7 @@ boolean isValid(String s) {
 4. Quando você escolheria `LinkedList` em vez de `ArrayList` no dia a dia? (Dica: a resposta honesta é "quase nunca". Explique por quê.)
 5. Resolva o 155 Min Stack: uma pilha com `push`, `pop`, `top` e `getMin`, todos em O(1).
 
-## Tema 2 — Hash Tables, Trees, Heaps e Graphs
+## Tema 2: Hash Tables, Trees, Heaps e Graphs
 
 **Objetivo:** conhecer as estruturas que transformam soluções O(n²) em O(n) ou O(n log n).
 
@@ -225,15 +225,15 @@ Muitos problemas de grade (matriz) também são grafos: cada célula é um nó l
 
 **Problemas do tema:** 1 Two Sum, 217 Contains Duplicate, 242 Valid Anagram, 49 Group Anagrams, 347 Top K Frequent Elements, 215 Kth Largest Element in an Array.
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Resolva o 217 Contains Duplicate de duas formas: O(n log n) sem estrutura extra e O(n) com `HashSet`. Compare tempo e espaço.
 2. Uma classe `Pessoa` sobrescreve `equals` mas não `hashCode`. O que acontece ao usá-la como chave de um `HashMap`?
 3. Insira, nessa ordem, numa BST: 50, 30, 70, 20, 40, 60, 80. Desenhe. Agora insira 1, 2, 3, 4, 5 numa BST nova. Qual o problema?
 4. Resolva o 347 Top K Frequent Elements usando `HashMap` + `PriorityQueue`. Qual o Big O?
-5. Represente como lista de adjacência: A–B, A–C, B–D, C–D, D–E (não direcionado).
+5. Represente como lista de adjacência: A-B, A-C, B-D, C-D, D-E (não direcionado).
 
-## Tema 3 — Algoritmos fundamentais
+## Tema 3: Algoritmos fundamentais
 
 **Objetivo:** dominar busca, ordenação e recursão, que aparecem dentro de quase todo problema.
 
@@ -301,7 +301,7 @@ void merge(int[] a, int lo, int mid, int hi) {
 
 **Problemas do tema:** 704 Binary Search, 35 Search Insert Position, 33 Search in Rotated Sorted Array, 912 Sort an Array, 509 Fibonacci Number, 50 Pow(x, n).
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Quantas comparações, no máximo, a busca binária faz num array de 1 milhão de elementos? E de 1 bilhão?
 2. Implemente o quick sort (partição de Lomuto ou Hoare). Em que entrada ele cai para O(n²)? Como evitar?
@@ -309,7 +309,7 @@ void merge(int[] a, int lo, int mid, int hi) {
 4. Resolva o 35 Search Insert Position. O que `lo` representa quando o laço termina?
 5. Escreva `potencia(x, n)` em O(log n) usando dividir e conquistar (LeetCode 50).
 
-## Tema 4 — Arrays e Strings: padrões
+## Tema 4: Arrays e Strings: padrões
 
 **Objetivo:** aprender os 4 padrões que resolvem a maior parte dos problemas de array e string.
 
@@ -383,7 +383,7 @@ int somaDe2a5 = prefixo[6] - prefixo[2];
 
 **Problemas do tema:** 242 Valid Anagram, 125 Valid Palindrome, 167 Two Sum II, 15 3Sum, 11 Container With Most Water, 121 Best Time to Buy and Sell Stock, 3 Longest Substring Without Repeating Characters, 238 Product of Array Except Self, 560 Subarray Sum Equals K.
 
-### Atividades de fixação — Tema 4
+### Atividades de fixação do Tema 4
 
 1. Para cada enunciado, diga o padrão: (a) "maior subarray com soma ≤ K, todos positivos"; (b) "dois números num array ordenado que somam alvo"; (c) "quantas vezes cada palavra aparece"; (d) "soma de vários intervalos [l, r] consultados muitas vezes".
 2. Resolva o 121 Best Time to Buy and Sell Stock em O(n) e O(1) de espaço.
@@ -391,7 +391,7 @@ int somaDe2a5 = prefixo[6] - prefixo[2];
 4. Resolva o 238 Product of Array Except Self sem usar divisão.
 5. Explique por que a sliding window do LeetCode 3 é O(n), mesmo tendo `ini` e `fim` se movendo.
 
-## Tema 5 — Trees, Graphs e problemas recursivos
+## Tema 5: Trees, Graphs e problemas recursivos
 
 **Objetivo:** percorrer árvores e grafos com DFS e BFS e resolver problemas de "explorar todas as opções".
 
@@ -485,7 +485,7 @@ boolean union(int a, int b) {
 
 **Problemas do tema:** 104 Maximum Depth, 226 Invert Binary Tree, 98 Validate BST, 102 Level Order Traversal, 200 Number of Islands, 133 Clone Graph, 207 Course Schedule, 78 Subsets, 46 Permutations, 684 Redundant Connection.
 
-### Atividades de fixação — Tema 5
+### Atividades de fixação do Tema 5
 
 1. Você precisa do menor número de movimentos de um cavalo de xadrez entre duas casas. DFS ou BFS? Por quê?
 2. Resolva o 226 Invert Binary Tree. Qual o Big O de tempo e espaço?
@@ -493,7 +493,7 @@ boolean union(int a, int b) {
 4. Resolva o 207 Course Schedule com o algoritmo de Kahn.
 5. Explique por que a solução ingênua do 98 Validate BST (comparar só com os filhos diretos) está errada, com um exemplo.
 
-## Tema 6 — Programação dinâmica e padrões de entrevista
+## Tema 6: Programação dinâmica e padrões de entrevista
 
 **Objetivo:** resolver problemas de otimização com DP e saber se comportar na entrevista.
 
@@ -583,7 +583,7 @@ O entrevistador avalia **como você pensa**, não só se passou nos testes. Rote
 
 **Problemas do tema:** 70 Climbing Stairs, 198 House Robber, 322 Coin Change, 300 Longest Increasing Subsequence, 55 Jump Game, 56 Merge Intervals, 739 Daily Temperatures, 1143 Longest Common Subsequence.
 
-### Atividades de fixação — Tema 6
+### Atividades de fixação do Tema 6
 
 1. Para o 322 Coin Change, escreva em português: o estado, a transição e o caso base. Depois implemente.
 2. Por que o guloso "sempre pegue a maior moeda" falha no Coin Change? Dê um exemplo de moedas e valor.

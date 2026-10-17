@@ -1,4 +1,4 @@
-# Gabarito — Backend
+# Gabarito: Backend
 
 Abra só depois de tentar.
 

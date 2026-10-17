@@ -1,4 +1,4 @@
-# Fundamentos — Apostila Prática
+# Fundamentos: Apostila Prática
 
 Roadmap Java Backend · Semanas 01 a 03
 
@@ -42,12 +42,12 @@ javac -version
 
 | Etapa | O que fazer | Tempo |
 |---|---|---|
-| 1 | Tema 1 — Como computadores executam programas | Semana 01 |
-| 2 | Tema 2 — Sistema operacional, processos e memória | Semana 02 |
-| 3 | Tema 3 — Redes e internet | Semana 03 |
+| 1 | Tema 1: Como computadores executam programas | Semana 01 |
+| 2 | Tema 2: Sistema operacional, processos e memória | Semana 02 |
+| 3 | Tema 3: Redes e internet | Semana 03 |
 | 4 | Projeto da etapa + resumão | Fim de semana |
 
-## Tema 1 — Como computadores executam programas
+## Tema 1: Como computadores executam programas
 
 **Objetivo:** entender o caminho do seu código até virar algo que a CPU executa, e onde os dados ficam guardados enquanto o programa roda.
 
@@ -185,7 +185,7 @@ O **stack trace** que aparece quando dá erro é justamente a call stack naquele
 
 > **Cuidado! Cai na entrevista:** "Qual a diferença entre stack e heap?" Fale de **o que guarda**, **quem limpa** e **qual erro** cada uma gera. Bônus: cada thread tem sua própria stack; o heap é compartilhado entre todas.
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Explique com suas palavras, usando uma analogia diferente do cozinheiro, a diferença entre CPU, RAM e disco.
 2. Rode as quatro etapas de compilação do `ola.c`. Abra o `ola.s` e anote 3 instruções que você reconhece (ou chuta o que fazem).
@@ -201,7 +201,7 @@ O **stack trace** que aparece quando dá erro é justamente a call stack naquele
    ```
 6. Escreva um método recursivo que cause `StackOverflowError`. Depois, rode com `java -Xss256k Main` e com `java -Xss4m Main` contando a profundidade alcançada. O que mudou e por quê?
 
-## Tema 2 — Sistema operacional, processos e memória
+## Tema 2: Sistema operacional, processos e memória
 
 **Objetivo:** entender quem gerencia a CPU e a memória entre vários programas, e o que são processos e threads.
 
@@ -271,7 +271,7 @@ free -h           # memória (olhe a coluna "available")
 cat /proc/$$/status | grep -i vm   # memória virtual do seu shell
 ```
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Dê um exemplo do dia a dia de um backend que mostre o SO como **máquina estendida** e outro como **gerente de recursos**.
 2. Por que um bug de memória numa thread pode derrubar a aplicação Spring inteira, mas um bug no Chrome não derruba seu VS Code?
@@ -280,7 +280,7 @@ cat /proc/$$/status | grep -i vm   # memória virtual do seu shell
 5. O que é um page fault? Ele sempre é um erro?
 6. Classifique como CPU bound ou I/O bound: (a) API que consulta o banco e devolve JSON; (b) gerar miniaturas de 10 mil imagens; (c) serviço que chama 3 outras APIs e junta as respostas; (d) calcular o hash bcrypt de uma senha.
 
-## Tema 3 — Redes e internet
+## Tema 3: Redes e internet
 
 **Objetivo:** entender como uma requisição sai do navegador e chega no seu servidor Java.
 
@@ -345,7 +345,7 @@ A pergunta clássica. Resposta em passos:
 
 > **Cuidado! Cai na entrevista:** não precisa ir até o nível elétrico. Mostre que conhece **DNS, TCP, TLS, HTTP e o caminho no servidor**. Se o entrevistador for de backend, detalhe o passo 6 (load balancer, cache, banco).
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Use `dig +short` para descobrir o IP de 3 sites que você usa. Algum retornou mais de um IP? Por que você acha que isso acontece?
 2. Rode `curl -v https://github.com` e identifique na saída: o IP conectado, a versão do TLS e o status HTTP.

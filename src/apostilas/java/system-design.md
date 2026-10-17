@@ -1,4 +1,4 @@
-# System Design — Apostila Prática
+# System Design: Apostila Prática
 
 Roadmap Java Backend · Semanas 22 a 24
 
@@ -25,11 +25,11 @@ System Design é desenhar um sistema grande (um encurtador de links, um chat, um
 
 | Semana | Tema |
 |---|---|
-| 22 | Tema 1 — Blocos de construção |
-| 23 | Tema 2 — Método para a entrevista |
-| 24 | Tema 3 — Cases clássicos + simulado |
+| 22 | Tema 1: Blocos de construção |
+| 23 | Tema 2: Método para a entrevista |
+| 24 | Tema 3: Cases clássicos + simulado |
 
-## Tema 1 — Blocos de construção
+## Tema 1: Blocos de construção
 
 **Objetivo:** conhecer as peças que aparecem em quase todo desenho de sistema.
 
@@ -94,7 +94,7 @@ Custo: joins e transações entre shards ficam muito difíceis. Só faça quando
 
 Desacoplam quem produz de quem processa e **absorvem picos**: a Black Friday enche a fila, e os workers processam no ritmo deles. Revise o Tema 2 da apostila de Sistemas Distribuídos.
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Sua API guarda o carrinho do usuário num `HashMap` em memória. O que acontece quando você coloca um load balancer com 3 réplicas? Como corrigir?
 2. Explique cache-aside com um desenho de sequência (aplicação, cache, banco) para um hit e para um miss.
@@ -102,7 +102,7 @@ Desacoplam quem produz de quem processa e **absorvem picos**: a Black Friday enc
 4. O usuário altera o nome do perfil, a página recarrega e mostra o nome antigo. A arquitetura tem réplicas de leitura. Explique e proponha uma correção.
 5. Quando você **não** faria sharding? Cite duas alternativas antes de chegar nele.
 
-## Tema 2 — Método para a entrevista
+## Tema 2: Método para a entrevista
 
 **Objetivo:** ter um roteiro para os 45 minutos da entrevista.
 
@@ -174,7 +174,7 @@ Ao aprofundar, percorra a lista:
 
 > **Cuidado! Cai na entrevista:** sempre fale em **trade-offs**: "Escolhi X porque Y; o custo disso é Z". Nunca diga que uma tecnologia é "a melhor" sem contexto. E não jogue nomes de tecnologia sem explicar por quê.
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Liste 4 requisitos funcionais e 4 não funcionais para um sistema de ingressos para shows.
 2. Estime: um app de mensagens com 50 milhões de usuários ativos por dia, cada um enviando 40 mensagens de 200 bytes. Quantas mensagens por segundo (média e pico)? Quanto armazenamento por ano?
@@ -182,7 +182,7 @@ Ao aprofundar, percorra a lista:
 4. Para o sistema de ingressos, onde a consistência precisa ser forte e onde pode ser eventual?
 5. Grave a si mesmo explicando o encurtador de URL em 10 minutos, seguindo o roteiro. Anote o que esqueceu.
 
-## Tema 3 — Cases clássicos
+## Tema 3: Cases clássicos
 
 **Objetivo:** praticar o método em problemas que caem com frequência.
 
@@ -232,7 +232,7 @@ A prioridade aqui é **correção**, não velocidade.
 - Comunicação com o parceiro externo: timeout, retry com a mesma chave de idempotência e webhook para resultado assíncrono.
 - No PIX: o pagamento é confirmado em segundos, então o fluxo síncrono precisa ser rápido, mas o ledger e a idempotência continuam sendo a base.
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. No encurtador, por que contador + Base62 em vez de gerar um código aleatório? E qual a desvantagem do contador?
 2. Escreva em pseudocódigo um rate limiter de janela fixa com Redis (`INCR` e `EXPIRE`). Qual o problema da janela fixa na virada do minuto?

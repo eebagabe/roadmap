@@ -1,4 +1,4 @@
-# Gabarito — System Design
+# Gabarito: System Design
 
 Abra só depois de tentar. Em System Design, respostas diferentes podem estar certas se forem bem justificadas.
 

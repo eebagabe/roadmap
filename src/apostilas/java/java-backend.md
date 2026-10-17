@@ -1,4 +1,4 @@
-# Java Backend — Apostila Prática
+# Java Backend: Apostila Prática
 
 Roadmap Java Backend · Semanas 13 a 18
 
@@ -31,14 +31,14 @@ Agora sim: Java a fundo e o ecossistema que o mercado usa, o **Spring Boot**. A 
 
 | Semana | Tema |
 |---|---|
-| 13 | Tema 1 — Java essencial e orientação a objetos |
-| 14 | Tema 2 — Collections, Generics e Streams |
-| 15 | Tema 3 — Concorrência e JVM |
-| 16 | Tema 4 — Spring Boot |
-| 17 | Tema 5 — Persistência com JPA |
-| 18 | Tema 6 — Testes, segurança e deploy + projeto |
+| 13 | Tema 1: Java essencial e orientação a objetos |
+| 14 | Tema 2: Collections, Generics e Streams |
+| 15 | Tema 3: Concorrência e JVM |
+| 16 | Tema 4: Spring Boot |
+| 17 | Tema 5: Persistência com JPA |
+| 18 | Tema 6: Testes, segurança e deploy + projeto |
 
-## Tema 1 — Java essencial e orientação a objetos
+## Tema 1: Java essencial e orientação a objetos
 
 **Objetivo:** escrever Java idiomático e explicar os pilares da orientação a objetos.
 
@@ -150,7 +150,7 @@ try (var leitor = Files.newBufferedReader(Path.of("dados.txt"))) {   // try-with
 
 Boas práticas: nunca `catch (Exception e) {}` vazio; sempre passe a causa original; crie exceções de negócio (`EstoqueInsuficienteException extends RuntimeException`).
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Explique a diferença entre JDK, JRE e JVM para alguém que nunca programou.
 2. O que imprime? Explique.
@@ -162,7 +162,7 @@ Boas práticas: nunca `catch (Exception e) {}` vazio; sempre passe a causa origi
 4. Converta para record e adicione validação de e-mail não vazio: uma classe `Cliente` com `nome`, `email` e getters.
 5. Quando você usaria uma exceção checked e quando uma unchecked? Por que o Spring prefere unchecked?
 
-## Tema 2 — Collections, Generics e Streams
+## Tema 2: Collections, Generics e Streams
 
 **Objetivo:** escolher a coleção certa e escrever transformações de dados com Streams.
 
@@ -239,7 +239,7 @@ Cliente c = buscar(email).orElseThrow(() -> new ClienteNaoEncontradoException(em
 
 Evite `optional.get()` sem checar: é um `NullPointerException` com outro nome.
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Qual coleção usar: (a) histórico de navegação com "voltar"; (b) tags únicas de um post, na ordem em que foram adicionadas; (c) ranking de jogadores sempre ordenado por pontos; (d) cache de produto por ID.
 2. Crie a classe `Produto(id, nome)` sem `equals/hashCode`, coloque dois iguais num `HashSet` e mostre o `size()`. Depois converta para record e repita.
@@ -247,7 +247,7 @@ Evite `optional.get()` sem checar: é um `NullPointerException` com outro nome.
 4. Reescreva sem `if (x != null)`: `Cliente c = repo.buscar(id); if (c != null && c.endereco() != null) return c.endereco().cidade(); return "Desconhecida";` (considere que `buscar` e `endereco()` retornam `Optional`).
 5. Explique o que significa dizer que streams são "preguiçosos" e dê um exemplo em que isso faz diferença.
 
-## Tema 3 — Concorrência e JVM
+## Tema 3: Concorrência e JVM
 
 **Objetivo:** escrever código concorrente sem bugs bobos e entender a memória da JVM.
 
@@ -331,7 +331,7 @@ jcmd <PID> GC.heap_info
 
 Vazamento de memória em Java existe: objeto que ninguém usa mas alguém ainda referencia (ex.: um `static Map` que só cresce).
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Rode o `Contador` sem sincronização com duas threads de 1 milhão de incrementos cada. Qual resultado deu? Corrija de duas formas.
 2. Escreva um exemplo de código que pode dar deadlock e depois corrija.
@@ -339,7 +339,7 @@ Vazamento de memória em Java existe: objeto que ninguém usa mas alguém ainda 
 4. Compare: crie 10 mil tarefas com `Thread.sleep(1s)` num `newFixedThreadPool(100)` e num executor de virtual threads. Meça o tempo dos dois.
 5. Um serviço tem `private static final List<Evento> HISTORICO = new ArrayList<>();` e adiciona um evento a cada requisição. Qual o problema? (São dois.)
 
-## Tema 4 — Spring Boot
+## Tema 4: Spring Boot
 
 **Objetivo:** criar uma API REST profissional com Spring Boot.
 
@@ -456,7 +456,7 @@ Ambos baixam dependências e constroem o projeto. Maven usa `pom.xml` (XML, conv
 ./mvnw package              ./gradlew build
 ```
 
-### Atividades de fixação — Tema 4
+### Atividades de fixação do Tema 4
 
 1. Explique injeção de dependência com uma analogia e diga por que ela facilita testes.
 2. Crie em start.spring.io um projeto com Web, Validation e DevTools. Faça um CRUD de `Produto` em memória (um `ConcurrentHashMap` no service).
@@ -464,7 +464,7 @@ Ambos baixam dependências e constroem o projeto. Maven usa `pom.xml` (XML, conv
 4. Crie um `@RestControllerAdvice` que transforma `ProdutoNaoEncontradoException` em 404 com `ProblemDetail`.
 5. Por que não devolver a entidade JPA direto no controller? Cite duas razões.
 
-## Tema 5 — Persistência com JPA
+## Tema 5: Persistência com JPA
 
 **Objetivo:** usar JPA sem cair nas armadilhas clássicas.
 
@@ -556,7 +556,7 @@ Armadilhas:
 - Use `@Transactional(readOnly = true)` em consultas.
 - Concorrência: para evitar que dois pedidos comprem a última unidade, use `@Version` (lock otimista) ou `@Lock(PESSIMISTIC_WRITE)`.
 
-### Atividades de fixação — Tema 5
+### Atividades de fixação do Tema 5
 
 1. Mapeie `Cliente` 1:N `Pedido` e `Pedido` 1:N `ItemPedido`. Quais lados são donos do relacionamento?
 2. Provoque um N+1 com `show-sql` ligado e conte as queries. Depois resolva com `join fetch` e conte de novo.
@@ -564,7 +564,7 @@ Armadilhas:
 4. Por que esta transação não funciona? `public void processarTodos() { lista.forEach(this::processar); } @Transactional public void processar(Pedido p) {...}`
 5. Explique lock otimista com `@Version` e o que acontece quando duas transações alteram a mesma linha.
 
-## Tema 6 — Testes, segurança e deploy
+## Tema 6: Testes, segurança e deploy
 
 **Objetivo:** entregar código testado, seguro e pronto para rodar em container.
 
@@ -674,7 +674,7 @@ jobs:
       - run: ./mvnw -B verify
 ```
 
-### Atividades de fixação — Tema 6
+### Atividades de fixação do Tema 6
 
 1. Escreva 3 testes unitários com Mockito para um `TransferenciaService`: sucesso, saldo insuficiente, conta inexistente.
 2. Por que preferir Testcontainers a H2 nos testes de integração?

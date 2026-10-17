@@ -1,4 +1,4 @@
-# Gabarito — LeetCode
+# Gabarito: LeetCode
 
 Abra só depois de tentar. Para problemas do LeetCode, uma solução que passa nos testes com o Big O certo já é uma resposta correta, mesmo que diferente da daqui.
 

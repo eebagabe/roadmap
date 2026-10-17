@@ -1,4 +1,4 @@
-# Backend — Apostila Prática
+# Backend: Apostila Prática
 
 Roadmap Java Backend · Semanas 10 a 12
 
@@ -33,11 +33,11 @@ docker exec -it pg psql -U postgres
 
 | Semana | Tema |
 |---|---|
-| 10 | Tema 1 — Como a web funciona e APIs |
-| 11 | Tema 2 — Banco de dados |
-| 12 | Tema 3 — Segurança e boas práticas + projeto |
+| 10 | Tema 1: Como a web funciona e APIs |
+| 11 | Tema 2: Banco de dados |
+| 12 | Tema 3: Segurança e boas práticas + projeto |
 
-## Tema 1 — Como a web funciona e APIs
+## Tema 1: Como a web funciona e APIs
 
 **Objetivo:** entender o protocolo HTTP de verdade e desenhar APIs REST que outros devs gostem de usar.
 
@@ -128,7 +128,7 @@ curl -i https://api.github.com/users/octocat     # -i mostra status e headers
 curl -i -X POST https://httpbin.org/post -H "Content-Type: application/json" -d '{"a":1}'
 ```
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Escolha método e status para: (a) criar um cliente; (b) cliente não encontrado; (c) e-mail já cadastrado; (d) apagar um produto com sucesso; (e) token expirado; (f) usuário comum tentando acessar rota de admin.
 2. Reescreva em REST: `POST /getAllProducts`, `GET /deleteUser?id=3`, `POST /updateOrderStatus`.
@@ -136,7 +136,7 @@ curl -i -X POST https://httpbin.org/post -H "Content-Type: application/json" -d 
 4. Use `curl -i` na API do GitHub e encontre: status, `Content-Type` e algum header de rate limit.
 5. Seu front em `localhost:5173` chama sua API em `localhost:8080` e dá erro de CORS. Explique o que está acontecendo e onde se corrige.
 
-## Tema 2 — Banco de dados
+## Tema 2: Banco de dados
 
 **Objetivo:** modelar dados, escrever SQL que não derruba a produção e entender transações.
 
@@ -169,8 +169,8 @@ SELECT status, COUNT(*), SUM(total) FROM pedidos GROUP BY status HAVING SUM(tota
 
 Modelar é decidir tabelas e relacionamentos:
 
-- **1:N** — um cliente tem vários pedidos (`pedidos.cliente_id`).
-- **N:N** — um pedido tem vários produtos e um produto está em vários pedidos: tabela intermediária `itens_pedido(pedido_id, produto_id, quantidade, preco_unitario)`.
+- **1:N**: um cliente tem vários pedidos (`pedidos.cliente_id`).
+- **N:N**: um pedido tem vários produtos e um produto está em vários pedidos: tabela intermediária `itens_pedido(pedido_id, produto_id, quantidade, preco_unitario)`.
 
 **Normalização** evita dados repetidos. Ideia das três primeiras formas normais:
 
@@ -238,7 +238,7 @@ Níveis de isolamento (do mais fraco ao mais forte): Read Uncommitted, **Read Co
 
 > **Na prática:** comece com PostgreSQL. Ele resolve 90% dos casos (e ainda tem JSONB). Use NoSQL quando houver um motivo claro.
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Modele (tabelas, colunas, chaves) um sistema de cursos: alunos, cursos, matrículas (com data e nota final).
 2. Escreva a query: nome de cada cliente e o valor total gasto em pedidos `PAGO`, incluindo clientes que gastaram zero, ordenado do maior para o menor.
@@ -246,7 +246,7 @@ Níveis de isolamento (do mais fraco ao mais forte): Read Uncommitted, **Read Co
 4. Explique, com o exemplo da transferência, o que aconteceria sem atomicidade.
 5. Para cada caso escolha SQL ou NoSQL (e qual tipo): (a) carrinho de compras temporário; (b) extrato bancário; (c) contador de visualizações de vídeos; (d) "pessoas que você talvez conheça".
 
-## Tema 3 — Segurança e boas práticas
+## Tema 3: Segurança e boas práticas
 
 **Objetivo:** não ser o dev que vaza senha de cliente.
 
@@ -324,7 +324,7 @@ git log -p | grep -i password   # se aparecer algo, a senha já vazou: troque-a
 
 Muitos testes unitários, uma boa camada de integração e poucos testes ponta a ponta.
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Para cada situação diga se é problema de autenticação ou autorização: (a) senha errada; (b) estagiário apagando pedido; (c) token expirado; (d) usuário vendo o pedido de outro.
 2. Decodifique um JWT de exemplo em jwt.io. O que dá para ler sem a chave? O que a chave protege?

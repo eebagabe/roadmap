@@ -1,4 +1,4 @@
-# Sistemas Distribuídos — Apostila Prática
+# Sistemas Distribuídos: Apostila Prática
 
 Roadmap Java Backend · Semanas 19 a 21
 
@@ -24,11 +24,11 @@ Enquanto tudo roda num servidor só, a vida é simples: ou funciona, ou caiu. Qu
 
 | Semana | Tema |
 |---|---|
-| 19 | Tema 1 — Fundamentos de sistemas distribuídos |
-| 20 | Tema 2 — Comunicação entre serviços |
-| 21 | Tema 3 — Microsserviços e resiliência + projeto |
+| 19 | Tema 1: Fundamentos de sistemas distribuídos |
+| 20 | Tema 2: Comunicação entre serviços |
+| 21 | Tema 3: Microsserviços e resiliência + projeto |
 
-## Tema 1 — Fundamentos de sistemas distribuídos
+## Tema 1: Fundamentos de sistemas distribuídos
 
 **Objetivo:** entender por que distribuir é difícil e as ferramentas mentais para lidar com isso.
 
@@ -111,7 +111,7 @@ RestClient client = RestClient.builder()
     .build();
 ```
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Você chamou o serviço de estoque para reservar 1 unidade e deu timeout. Liste as possibilidades do que aconteceu e o que você faria em cada caso.
 2. Classifique como CP ou AP e justifique: (a) reserva do último assento de um voo; (b) número de visualizações de um vídeo; (c) catálogo de produtos; (d) limite do cartão de crédito.
@@ -119,7 +119,7 @@ RestClient client = RestClient.builder()
 4. Por que fazer retry sem backoff pode **derrubar** um serviço que estava só um pouco lento?
 5. Desenhe como você tornaria idempotente o envio do e-mail de boas-vindas.
 
-## Tema 2 — Comunicação entre serviços
+## Tema 2: Comunicação entre serviços
 
 **Objetivo:** escolher entre chamada direta e mensageria, e usar Kafka sem perder eventos.
 
@@ -226,7 +226,7 @@ CREATE TABLE outbox (
 );
 ```
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Para cada caso, síncrono ou assíncrono? (a) mostrar o saldo na tela; (b) enviar nota fiscal por e-mail após a compra; (c) validar CEP no cadastro; (d) atualizar o painel de vendas em tempo real.
 2. Você precisa que todos os eventos de um mesmo pedido sejam processados em ordem no Kafka. Como garantir?
@@ -234,7 +234,7 @@ CREATE TABLE outbox (
 4. Explique com suas palavras o problema da escrita dupla e como o Outbox resolve.
 5. Suba o Kafka com Docker Compose, crie um produtor e um consumidor Spring. Pare o consumidor, publique 10 mensagens, ligue de novo. O que acontece?
 
-## Tema 3 — Microsserviços e resiliência
+## Tema 3: Microsserviços e resiliência
 
 **Objetivo:** saber quando usar microsserviços e como impedir que a falha de um derrube todos.
 
@@ -299,7 +299,7 @@ Uma requisição passa por 8 serviços e demora 3 segundos. Onde está a lentid�
 
 > **Cuidado! Cai na entrevista:** inclua o `traceId` em todos os logs. Assim dá para juntar os logs de todos os serviços de uma mesma requisição.
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Uma startup com 4 devs quer começar com 12 microsserviços. Dê sua opinião com argumentos.
 2. Desenhe os estados de um circuit breaker e o que dispara cada transição.

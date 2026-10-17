@@ -1,4 +1,4 @@
-# Gabarito — Sistemas Distribuídos
+# Gabarito: Sistemas Distribuídos
 
 Abra só depois de tentar.
 
