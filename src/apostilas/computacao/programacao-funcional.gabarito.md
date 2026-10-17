@@ -119,7 +119,7 @@ Abra só depois de tentar.
    - `filter :: (a -> Bool) -> [a] -> [a]`: recebe um predicado e uma lista, devolve lista do mesmo tipo.
    - `(.) :: (b -> c) -> (a -> b) -> a -> c`: recebe f (de b para c) e g (de a para b) e devolve uma função de a para c. Os tipos "encaixam" no meio (o b), exatamente como na composição matemática.
 5. `f = length . filter even`.
-6. `foldr (-) 0 [1, 2, 3] = 1 − (2 − (3 − 0)) = 1 − (2 − 3) = 1 − (−1) = **2**`. `foldl (-) 0 [1, 2, 3] = ((0 − 1) − 2) − 3 = **−6**`. São diferentes porque a subtração **não é associativa**: a ordem dos parênteses importa. Para operações associativas com elemento neutro (soma, produto, `&&`, `++`), `foldr` e `foldl` dão o mesmo resultado.
+6. `foldr (-) 0 [1, 2, 3]` = 1 − (2 − (3 − 0)) = 1 − (2 − 3) = 1 − (−1) = **2**. `foldl (-) 0 [1, 2, 3]` = ((0 − 1) − 2) − 3 = **−6**. São diferentes porque a subtração **não é associativa**: a ordem dos parênteses importa. Para operações associativas com elemento neutro (soma, produto, `&&`, `++`), `foldr` e `foldl` dão o mesmo resultado.
 7. ```python
    from functools import reduce
    numeros = filter(lambda x: x % 3 == 0 or x % 5 == 0, range(1, 101))
@@ -206,7 +206,7 @@ Abra só depois de tentar.
    = (f x : map f xs') ++ map f ys    (++.2, lido ao contrário)
    = map f (x : xs') ++ map f ys      (map.2)
    ```
-7. *Base:* `length (map f []) = length [] `, por (map.1). *Passo:* `length (map f (x : xs)) = length (f x : map f xs) = 1 + length (map f xs) = 1 + length xs` (pela HI) `= length (x : xs)`. ∎
+7. *Base:* `length (map f [])` = `length []`, por (map.1). *Passo:* `length (map f (x : xs)) = length (f x : map f xs) = 1 + length (map f xs) = 1 + length xs` (pela HI) `= length (x : xs)`. ∎
 
 ## Tema 5
 
