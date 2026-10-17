@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { roadmaps } from '../data/roadmaps'
 import { BannerComputacao } from '../components/BannerComputacao'
+import { Idiomas } from '../components/Idiomas'
 import { ProgressBar } from '../components/ProgressBar'
 import { useProgress } from '../lib/progress'
 import { countDone, roadmapTopicKeys, totalWeeks } from '../lib/roadmap'
@@ -70,6 +71,8 @@ export function HomePage() {
           )
         })}
       </section>
+
+      <Idiomas />
     </div>
   )
 }
