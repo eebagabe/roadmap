@@ -42,6 +42,8 @@ export type Roadmap = {
   status: 'disponivel' | 'em-breve'
   sections: Section[]
   companiesTitle: string
+  /** Frase abaixo do título da seção de empresas; há um texto padrão. */
+  companiesSubtitle?: string
   companies: Company[]
   projects: Project[]
 }

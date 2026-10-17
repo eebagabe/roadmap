@@ -769,6 +769,7 @@ export const computacao: Roadmap = {
     },
   ],
   companiesTitle: 'Onde essa formação leva',
+  companiesSubtitle: 'Caminhos que se abrem com uma base sólida em Ciência da Computação.',
   companies: [
     { name: 'Big techs', how: 'Google, Microsoft, Amazon e Meta contratam no Brasil e fora; entrevistas cobram exatamente algoritmos e sistemas.' },
     { name: 'Bancos e fintechs', how: 'Itaú, Nubank, BTG e Mercado Pago: sistemas distribuídos, segurança e dados em escala.' },

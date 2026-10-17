@@ -115,7 +115,7 @@ export function RoadmapPage() {
       </div>
 
       <div className="mt-24 space-y-20">
-        <Companies title={roadmap.companiesTitle} companies={roadmap.companies} />
+        <Companies title={roadmap.companiesTitle} subtitle={roadmap.companiesSubtitle} companies={roadmap.companies} />
         <Projects roadmapId={roadmap.id} projects={roadmap.projects} />
       </div>
 
