@@ -1,4 +1,4 @@
-# Gabarito — Testes de API
+# Gabarito: Testes de API
 
 Abra só depois de tentar. A ServeRest pode evoluir; se uma mensagem mudar, confie na documentação (Swagger) do site.
 

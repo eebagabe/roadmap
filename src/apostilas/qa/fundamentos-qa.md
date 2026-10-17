@@ -1,4 +1,4 @@
-# Fundamentos de Teste — Apostila Prática
+# Fundamentos de Teste: Apostila Prática
 
 Roadmap QA · Semanas 01 a 03
 
@@ -24,11 +24,11 @@ Antes de qualquer ferramenta, um QA precisa saber **pensar em testes**: o que te
 
 | Semana | Tema |
 |---|---|
-| 01 | Tema 1 — Qualidade e o papel do QA |
-| 02 | Tema 2 — Tipos e técnicas de teste |
-| 03 | Tema 3 — QA no time ágil + projeto |
+| 01 | Tema 1: Qualidade e o papel do QA |
+| 02 | Tema 2: Tipos e técnicas de teste |
+| 03 | Tema 3: QA no time ágil + projeto |
 
-## Tema 1 — Qualidade e o papel do QA
+## Tema 1: Qualidade e o papel do QA
 
 **Objetivo:** entender o que é qualidade de software e onde o QA atua.
 
@@ -93,7 +93,7 @@ Em qualquer modelo (cascata, ágil), o software passa por: requisitos → design
 
 A certificação Foundation Level é a mais conhecida da área. A prova é de múltipla escolha e cobre princípios, técnicas, gestão de testes e ferramentas. O syllabus (programa) é gratuito no site do BSTQB (o braço brasileiro), em português. Não é obrigatória, mas organiza o vocabulário e ajuda em processos seletivos.
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Dê um exemplo de erro, defeito e falha num app de delivery.
 2. Explique com suas palavras por que "teste exaustivo é impossível", usando como exemplo um formulário com 5 campos.
@@ -101,7 +101,7 @@ A certificação Foundation Level é a mais conhecida da área. A prova é de m�
 4. Em qual nível de teste cada bug provavelmente seria encontrado? (a) função de cálculo de frete arredonda errado; (b) o serviço de pedidos não consegue falar com o de pagamentos; (c) o fluxo de compra completo falha no último passo; (d) o cliente diz que o relatório não responde a pergunta que ele precisava.
 5. Qual dos 7 princípios explica por que a equipe deve renovar os testes de regressão de tempos em tempos?
 
-## Tema 2 — Tipos e técnicas de teste
+## Tema 2: Tipos e técnicas de teste
 
 **Objetivo:** escolher **poucos** casos de teste que encontram **muitos** bugs.
 
@@ -190,7 +190,7 @@ Heurísticas que ajudam: vazio/zero/um/muitos; limites; caracteres especiais e e
 - **Sanity test:** teste rápido e focado na funcionalidade que acabou de ser corrigida.
 - **Reteste (confirmação):** executar o mesmo caso que falhou para confirmar a correção.
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Um campo de senha exige de 8 a 20 caracteres, com pelo menos uma letra e um número. Liste as partições de equivalência e os valores limite.
 2. Monte uma tabela de decisão para: "Desconto de 10% para estudantes, 15% para idosos, e quem é os dois recebe só o maior desconto. Compras com cupom não acumulam com esses descontos."
@@ -198,7 +198,7 @@ Heurísticas que ajudam: vazio/zero/um/muitos; limites; caracteres especiais e e
 4. Escreva o charter de uma sessão exploratória de 60 minutos para o checkout de um app de delivery.
 5. Diferencie smoke, sanity, reteste e regressão com exemplos de uma mesma correção de bug.
 
-## Tema 3 — QA no time ágil
+## Tema 3: QA no time ágil
 
 **Objetivo:** trabalhar dentro do time, desde a história até a entrega.
 
@@ -268,7 +268,7 @@ Complemento: **shift-right**, que é testar e monitorar **em produção** (featu
 
 **Three Amigos:** antes de desenvolver, **negócio (PO)**, **dev** e **QA** conversam sobre a história. Cada um traz um olhar: o que resolver, como construir, o que pode dar errado. Muitos bugs morrem aqui, antes de existir código.
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Escreva 4 critérios de aceite para: *"Como usuário, quero recuperar minha senha por e-mail."*
 2. Transforme os critérios do exercício 1 em cenários Gherkin em português.

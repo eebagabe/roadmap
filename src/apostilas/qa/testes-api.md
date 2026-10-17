@@ -1,4 +1,4 @@
-# Testes de API — Apostila Prática
+# Testes de API: Apostila Prática
 
 Roadmap QA · Semanas 10 e 11
 
@@ -24,10 +24,10 @@ A maior parte da regra de negócio mora no **backend**. Testar a API diretamente
 
 | Semana | Tema |
 |---|---|
-| 10 | Tema 1 — HTTP e Postman |
-| 11 | Tema 2 — Automação de API + projeto |
+| 10 | Tema 1: HTTP e Postman |
+| 11 | Tema 2: Automação de API + projeto |
 
-## Tema 1 — HTTP e Postman
+## Tema 1: HTTP e Postman
 
 **Objetivo:** entender requisições e respostas e testar APIs com o Postman.
 
@@ -148,7 +148,7 @@ newman run serverest.postman_collection.json -e prod.postman_environment.json -r
 - **Contrato:** campos e tipos da resposta.
 - **Tempo de resposta.**
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Na ServeRest, cadastre um usuário administrador e faça login. Que status e campos vieram em cada resposta?
 2. Tente cadastrar o mesmo e-mail de novo. Qual status e qual mensagem? Faz sentido?
@@ -156,7 +156,7 @@ newman run serverest.postman_collection.json -e prod.postman_environment.json -r
 4. Monte a coleção com environment, token salvo automaticamente e e-mail gerado no pre-request.
 5. Escreva os testes (scripts) para: status, mensagem e tempo de resposta do `POST /usuarios`; rode tudo com o Collection Runner e depois com o Newman.
 
-## Tema 2 — Automação de API
+## Tema 2: Automação de API
 
 **Objetivo:** escrever testes de API em código, que rodam no pipeline.
 
@@ -332,7 +332,7 @@ WHERE i.pedido_id = 981;
 
 O básico que todo QA deve saber: `SELECT`, `WHERE`, `ORDER BY`, `JOIN`, `GROUP BY`, `COUNT`. Em ambientes compartilhados, **nunca** rode `UPDATE` ou `DELETE` sem `WHERE` (e, de preferência, só com permissão de leitura).
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Automatize no Playwright (ou REST Assured): cadastrar usuário, fazer login e verificar que o token começa com "Bearer".
 2. Automatize: criar produto com admin (201), sem token (401) e com usuário comum (403).

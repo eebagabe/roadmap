@@ -1,4 +1,4 @@
-# Gabarito — Automação Web
+# Gabarito: Automação Web
 
 Abra só depois de tentar.
 

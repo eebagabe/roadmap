@@ -1,4 +1,4 @@
-# Testes Manuais — Apostila Prática
+# Testes Manuais: Apostila Prática
 
 Roadmap QA · Semanas 04 e 05
 
@@ -24,10 +24,10 @@ Automação não substitui um bom teste manual: ela **repete** o que alguém pen
 
 | Semana | Tema |
 |---|---|
-| 04 | Tema 1 — Planejamento e documentação |
-| 05 | Tema 2 — Bugs e gestão de testes + projeto |
+| 04 | Tema 1: Planejamento e documentação |
+| 05 | Tema 2: Bugs e gestão de testes + projeto |
 
-## Tema 1 — Planejamento e documentação
+## Tema 1: Planejamento e documentação
 
 **Objetivo:** decidir o que testar, em que ordem, e registrar de forma útil.
 
@@ -90,7 +90,7 @@ Liga **requisitos** a **casos de teste** (e a bugs). Mostra o que está coberto 
 |---|---|---|
 | RF01 - Pagar com PIX | CT-PIX-001, 002, 003 | Passou |
 | RF02 - Estornar PIX | CT-PIX-010 | Falhou (BUG-231) |
-| RF03 - Comprovante por e-mail | — | **Sem cobertura** |
+| RF03 - Comprovante por e-mail | - | **Sem cobertura** |
 
 ### 1.5 Checklists
 
@@ -115,7 +115,7 @@ Não há tempo para testar tudo com a mesma profundidade. **Risco = probabilidad
 
 Alto impacto: dinheiro, dados pessoais, login, funcionalidades mais usadas, requisitos legais. Alta probabilidade: código novo, complexo, mexido às pressas, área com histórico de bugs.
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Escreva um plano de teste de uma página para a funcionalidade "favoritar produtos" de um e-commerce.
 2. Escreva 5 casos de teste para o login do saucedemo.com, incluindo os usuários especiais da página inicial.
@@ -123,7 +123,7 @@ Alto impacto: dinheiro, dados pessoais, login, funcionalidades mais usadas, requ
 4. Classifique por risco e ordene: (a) mudança na cor do rodapé; (b) novo cálculo de juros do parcelamento; (c) login com Google (código novo); (d) página "Sobre nós".
 5. Monte uma matriz de rastreabilidade para 3 requisitos do saucedemo, indicando um requisito sem cobertura.
 
-## Tema 2 — Bugs e gestão de testes
+## Tema 2: Bugs e gestão de testes
 
 **Objetivo:** reportar bugs de forma clara e acompanhar a qualidade com números.
 
@@ -220,7 +220,7 @@ Use métricas para **conversar e melhorar**, nunca para culpar pessoas.
 
 > **Na prática:** "número de bugs encontrados por QA" é uma métrica ruim: incentiva reportar muitos bugs pequenos em vez de prevenir os grandes.
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Classifique severidade e prioridade e justifique: (a) botão "Comprar" não funciona no Safari (15% dos usuários); (b) erro de português no e-mail de boas-vindas; (c) relatório interno de auditoria com valores errados, usado só no fechamento do ano; (d) usuário consegue ver pedidos de outro usuário trocando o ID na URL.
 2. Reescreva este relatório de bug: *"Título: Erro. Descrição: Tentei comprar e não deu. Arrumem urgente!!!"*

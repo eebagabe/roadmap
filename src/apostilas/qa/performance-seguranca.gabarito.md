@@ -1,4 +1,4 @@
-# Gabarito — Performance e Segurança
+# Gabarito: Performance e Segurança
 
 Abra só depois de tentar.
 

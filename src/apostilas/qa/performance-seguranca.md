@@ -1,4 +1,4 @@
-# Performance e Segurança — Apostila Prática
+# Performance e Segurança: Apostila Prática
 
 Roadmap QA · Semanas 12 e 13
 
@@ -23,10 +23,10 @@ Um sistema pode passar em todos os testes funcionais e ainda assim **cair na Bla
 
 | Semana | Tema |
 |---|---|
-| 12 | Tema 1 — Testes de performance |
-| 13 | Tema 2 — Segurança, acessibilidade e mobile + projeto |
+| 12 | Tema 1: Testes de performance |
+| 13 | Tema 2: Segurança, acessibilidade e mobile + projeto |
 
-## Tema 1 — Testes de performance
+## Tema 1: Testes de performance
 
 **Objetivo:** planejar, executar e interpretar testes de carga.
 
@@ -130,7 +130,7 @@ Cuidados para resultados confiáveis:
 - Dados variados (não peça sempre o mesmo produto, que fica no cache).
 - Inclua o "tempo de pensar" (`sleep`) para simular usuários reais.
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Para cada situação, qual tipo de teste? (a) garantir que o sistema aguenta a abertura de vendas de ingressos; (b) descobrir se a memória cresce sem parar ao longo do dia; (c) saber o limite antes de comprar mais servidores; (d) validar o script antes da execução grande.
 2. Um relatório diz: "média de 300 ms, p95 de 2,8 s, p99 de 9 s". O sistema está bom? Explique.
@@ -138,7 +138,7 @@ Cuidados para resultados confiáveis:
 4. Adicione ao script um `check` do status e um segundo endpoint, com pesos diferentes (80% das iterações na home, 20% em outra página).
 5. Liste 4 motivos pelos quais um teste de carga pode dar resultado irreal.
 
-## Tema 2 — Segurança, acessibilidade e mobile
+## Tema 2: Segurança, acessibilidade e mobile
 
 **Objetivo:** encontrar as falhas de segurança e acessibilidade mais comuns e conhecer o básico de mobile.
 
@@ -235,7 +235,7 @@ await expect($('~titulo-produtos')).toBeDisplayed()
 
 Mesmos princípios da web: seletores estáveis (accessibility id), esperas, Page Objects e testes independentes. Alternativas: **Maestro** (simples, em YAML), **Espresso** (Android) e **XCUITest** (iOS).
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Liste 5 testes de segurança que você incluiria no plano de teste da API de pedidos de um e-commerce.
 2. Suba o OWASP Juice Shop localmente e encontre 2 problemas (use o "Score Board" do próprio Juice Shop como guia). Descreva como encontrou.

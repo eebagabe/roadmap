@@ -1,4 +1,4 @@
-# Gabarito — CI/CD e Qualidade Contínua
+# Gabarito: CI/CD e Qualidade Contínua
 
 Abra só depois de tentar.
 

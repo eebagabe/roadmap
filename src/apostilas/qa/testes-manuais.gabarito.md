@@ -1,4 +1,4 @@
-# Gabarito — Testes Manuais
+# Gabarito: Testes Manuais
 
 Abra só depois de tentar.
 
@@ -33,7 +33,7 @@ Abra só depois de tentar.
    |---|---|---|
    | RF01 - Login | CT-01 a CT-05 | Passou |
    | RF02 - Adicionar ao carrinho | CT-10, CT-11 | Falhou com problem_user |
-   | RF03 - Ordenar produtos por preço | — | **Sem cobertura** |
+   | RF03 - Ordenar produtos por preço | - | **Sem cobertura** |
 
 ## Tema 2
 

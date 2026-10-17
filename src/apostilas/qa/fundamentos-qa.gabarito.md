@@ -1,4 +1,4 @@
-# Gabarito — Fundamentos de Teste
+# Gabarito: Fundamentos de Teste
 
 Abra só depois de tentar.
 

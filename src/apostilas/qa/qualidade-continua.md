@@ -1,4 +1,4 @@
-# CI/CD e Qualidade Contínua — Apostila Prática
+# CI/CD e Qualidade Contínua: Apostila Prática
 
 Roadmap QA · Semanas 14 e 15
 
@@ -24,10 +24,10 @@ Teste automatizado que só roda na máquina do QA, quando ele lembra, vale pouco
 
 | Semana | Tema |
 |---|---|
-| 14 | Tema 1 — Testes no pipeline |
-| 15 | Tema 2 — Estratégia e o QA moderno + projeto final |
+| 14 | Tema 1: Testes no pipeline |
+| 15 | Tema 2: Estratégia e o QA moderno + projeto final |
 
-## Tema 1 — Testes no pipeline
+## Tema 1: Testes no pipeline
 
 **Objetivo:** rodar testes automaticamente, em paralelo, com relatórios e regras de bloqueio.
 
@@ -168,7 +168,7 @@ Ferramentas como **SonarQube/SonarCloud** reúnem cobertura, bugs, code smells e
 
 > **Cuidado! Cai na entrevista:** "O pipeline está vermelho por causa de um teste flaky e o time quer desligar o teste. O que você faz?" Resposta: move o teste para **quarentena** (roda, mas não bloqueia), abre uma tarefa com prazo para corrigir, investiga a causa com trace/vídeo e devolve à suíte principal quando estabilizar. Nunca simplesmente apagar ou ignorar.
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Desenhe o pipeline ideal para um time que faz deploy diário de uma API e um front-end. Onde entra cada tipo de teste?
 2. Crie o workflow do exemplo para o seu repositório de testes e faça-o rodar num pull request.
@@ -176,7 +176,7 @@ Ferramentas como **SonarQube/SonarCloud** reúnem cobertura, bugs, code smells e
 4. Divida a suíte E2E em 2 shards. Quanto tempo diminuiu?
 5. Configure a branch `main` para exigir o CI verde antes do merge.
 
-## Tema 2 — Estratégia e o QA moderno
+## Tema 2: Estratégia e o QA moderno
 
 **Objetivo:** decidir onde investir esforço de teste e entender para onde a carreira caminha.
 
@@ -262,7 +262,7 @@ Caminhos comuns:
 
 Para o portfólio: projetos públicos no GitHub com README caprichado (como rodar, estratégia, prints do relatório), pipeline verde e um texto explicando suas decisões. A certificação ISTQB CTFL ajuda a passar em filtros de RH.
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. Para cada teste, diga o nível ideal (unidade, API/integração, E2E): (a) cálculo de juros do parcelamento; (b) usuário consegue completar uma compra do início ao fim; (c) endpoint de cadastro valida e-mail duplicado; (d) formatação de CPF; (e) botão "pagar" aparece desabilitado sem forma de pagamento.
 2. Uma empresa tem 600 testes E2E (3 horas), 20 de API e nenhum de unidade. Descreva o problema e um plano de 3 meses para melhorar.
@@ -270,7 +270,7 @@ Para o portfólio: projetos públicos no GitHub com README caprichado (como roda
 4. Proponha 3 monitoramentos sintéticos para um e-commerce em produção.
 5. Use uma ferramenta de IA para gerar casos de teste a partir de uma história de usuário. Liste o que estava bom, o que estava errado e o que faltou.
 
-## Projeto da etapa — Projeto final do roadmap
+## Projeto da etapa: projeto final do roadmap
 
 **Framework de testes completo, num único repositório:**
 

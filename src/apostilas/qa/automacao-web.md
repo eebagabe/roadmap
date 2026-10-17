@@ -1,4 +1,4 @@
-# Automação Web — Apostila Prática
+# Automação Web: Apostila Prática
 
 Roadmap QA · Semanas 06 a 09
 
@@ -29,12 +29,12 @@ Automatizar é escrever código que testa o sistema por você. O objetivo não �
 
 | Semana | Tema |
 |---|---|
-| 06 | Tema 1 — Programação para QA |
-| 07 | Tema 2 — DOM e seletores |
-| 08 | Tema 3 — Playwright |
-| 09 | Tema 4 — Cypress, Selenium e padrões + projeto |
+| 06 | Tema 1: Programação para QA |
+| 07 | Tema 2: DOM e seletores |
+| 08 | Tema 3: Playwright |
+| 09 | Tema 4: Cypress, Selenium e padrões + projeto |
 
-## Tema 1 — Programação para QA
+## Tema 1: Programação para QA
 
 **Objetivo:** o mínimo de programação para escrever automação limpa.
 
@@ -99,7 +99,7 @@ git push -u origin feat/testes-login
 
 Comandos de terminal úteis: `cd`, `ls`, `pwd`, `mkdir`, `cat`, `clear`, e as setas para repetir comandos.
 
-### Atividades de fixação — Tema 1
+### Atividades de fixação do Tema 1
 
 1. Escreva uma função `somarPrecos(precos: number[]): number` e outra `maisCaro(produtos: Produto[]): Produto`.
 2. Converta o texto `"$29.99"` (como aparece na tela) para o número `29.99`.
@@ -107,7 +107,7 @@ Comandos de terminal úteis: `cd`, `ls`, `pwd`, `mkdir`, `cat`, `clear`, e as se
 4. Crie o projeto Playwright, rode o teste de exemplo e abra o relatório.
 5. Crie um repositório no GitHub para o projeto e faça o primeiro push.
 
-## Tema 2 — DOM e seletores
+## Tema 2: DOM e seletores
 
 **Objetivo:** encontrar elementos de forma **estável**: seletores ruins são a causa número 1 de testes quebrando.
 
@@ -194,7 +194,7 @@ O elemento pode ainda não estar na tela quando o teste tenta usá-lo.
 await expect(page.getByText('Pedido confirmado')).toBeVisible()  // tenta até 5s (padrão)
 ```
 
-### Atividades de fixação — Tema 2
+### Atividades de fixação do Tema 2
 
 1. No saucedemo (página de produtos), escreva um seletor CSS e um XPath para o botão "Add to cart" da **Sauce Labs Bike Light**.
 2. Reescreva usando locators recomendados: `page.locator('#root > div > div > form > input.btn_action')`.
@@ -202,7 +202,7 @@ await expect(page.getByText('Pedido confirmado')).toBeVisible()  // tenta até 5
 4. Por que `waitForTimeout(5000)` é uma má prática? O que usar no lugar?
 5. Abra o DevTools no saucedemo e liste 5 atributos `data-test` que você usaria nos testes.
 
-## Tema 3 — Playwright
+## Tema 3: Playwright
 
 **Objetivo:** escrever, rodar e depurar testes E2E com Playwright.
 
@@ -325,7 +325,7 @@ Você usa o site e ele gera o código. Ótimo para descobrir locators; **não** 
 
 Com os `projects` do config, o mesmo teste roda em Chromium, Firefox, WebKit (motor do Safari) e emulação mobile. `npx playwright test --project=firefox` roda só um.
 
-### Atividades de fixação — Tema 3
+### Atividades de fixação do Tema 3
 
 1. Automatize: login com `locked_out_user` deve mostrar a mensagem de usuário bloqueado.
 2. Automatize: adicionar 2 produtos, abrir o carrinho e verificar que os 2 estão lá.
@@ -333,7 +333,7 @@ Com os `projects` do config, o mesmo teste roda em Chromium, Firefox, WebKit (mo
 4. Force uma falha (mude o texto esperado), rode com trace e use o Trace Viewer para entender o que aconteceu.
 5. Rode a suíte nos três navegadores e no projeto mobile. Algum teste se comportou diferente?
 
-## Tema 4 — Cypress, Selenium e padrões
+## Tema 4: Cypress, Selenium e padrões
 
 **Objetivo:** conhecer as outras ferramentas e os padrões que valem para todas.
 
@@ -482,7 +482,7 @@ When('entro com o usuário {string}', async function (usuario: string) {
 })
 ```
 
-### Atividades de fixação — Tema 4
+### Atividades de fixação do Tema 4
 
 1. Crie os Page Objects `LoginPage`, `ProdutosPage` e `CarrinhoPage` e refatore os testes do Tema 3 para usá-los.
 2. Escreva o mesmo teste de login em Cypress. O que achou mais fácil e mais difícil em relação ao Playwright?
