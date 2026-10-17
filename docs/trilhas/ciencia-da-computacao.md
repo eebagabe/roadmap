@@ -1,6 +1,6 @@
 # Trilha Ciência da Computação: plano completo
 
-> Status: **planejamento**. Este documento descreve tudo o que a trilha terá. A produção acontece etapa por etapa, marcando o checklist no fim do arquivo.
+> Status: **disponível**. As 25 etapas têm apostila, gabarito e dados no roadmap. Este documento registra o plano que guiou a produção; o checklist no fim do arquivo está completo.
 
 ## Por que esta trilha existe
 
@@ -431,7 +431,7 @@ Sugestões de temas: um sistema distribuído tolerante a falhas, um compilador p
 
 ## Decisões técnicas para a implementação
 
-- **id da trilha:** `computacao`; título "Roadmap Ciência da Computação"; ícone 🎓; status `em-breve` até a primeira etapa estar pronta.
+- **id da trilha:** `computacao`; título "Roadmap Ciência da Computação"; ícone 🎓; status `disponivel` desde a conclusão das 25 etapas.
 - **Seções no código** = as 25 etapas acima (o mapa agrupa por etapa; as fases aparecem no texto "Antes de começar" e no README). Se a página ficar longa demais, considerar um seletor de fase no topo do mapa.
 - **Cada etapa terá:** `src/apostilas/computacao/<id>.md` e `<id>.gabarito.md`, com `## Tema N` = semana N.
 - **Novo campo opcional** nas apostilas: um quadro "Equivalências" no "Comece por aqui" (ITA, MIT, Harvard, Oxford) e "Para ir além" (links gratuitos) no fim.
@@ -444,52 +444,52 @@ Sugestões de temas: um sistema distribuído tolerante a falhas, um compilador p
 Legenda: **A** = apostila, **G** = gabarito, **R** = dados no roadmap (semanas e tópicos).
 
 ### Estrutura
-- [ ] Dados do roadmap (`src/data/roadmaps/computacao.ts`) com as 25 etapas, empresas/destinos e projetos
-- [ ] Trocar o banner "em breve" da home pelo card normal quando a primeira fase estiver pronta
-- [ ] README atualizado
+- [x] Dados do roadmap (`src/data/roadmaps/computacao.ts`) com as 25 etapas, empresas/destinos e projetos
+- [x] Trocar o banner "em breve" da home pelo card normal quando a primeira fase estiver pronta
+- [x] README atualizado
 
 ### Fase 0. Preparação
-- [ ] 0.1 Matemática essencial: A · G · R
-- [ ] 0.2 Ferramentas do programador: A · G · R
+- [x] 0.1 Matemática essencial: A · G · R
+- [x] 0.2 Ferramentas do programador: A · G · R
 
 ### Fase 1. Programação
-- [ ] 1.1 Introdução à Computação e Programação: A · G · R
-- [ ] 1.2 Programação Funcional: A · G · R
-- [ ] 1.3 Programação Imperativa e Orientada a Objetos: A · G · R
+- [x] 1.1 Introdução à Computação e Programação: A · G · R
+- [x] 1.2 Programação Funcional: A · G · R
+- [x] 1.3 Programação Imperativa e Orientada a Objetos: A · G · R
 
 ### Fase 2. Matemática para Computação
-- [ ] 2.1 Matemática Discreta e Lógica: A · G · R
-- [ ] 2.2 Cálculo: A · G · R
-- [ ] 2.3 Álgebra Linear: A · G · R
-- [ ] 2.4 Probabilidade e Estatística: A · G · R
+- [x] 2.1 Matemática Discreta e Lógica: A · G · R
+- [x] 2.2 Cálculo: A · G · R
+- [x] 2.3 Álgebra Linear: A · G · R
+- [x] 2.4 Probabilidade e Estatística: A · G · R
 
 ### Fase 3. Algoritmos e Teoria
-- [ ] 3.1 Estruturas de Dados: A · G · R
-- [ ] 3.2 Projeto e Análise de Algoritmos: A · G · R
-- [ ] 3.3 Teoria da Computação: A · G · R
+- [x] 3.1 Estruturas de Dados: A · G · R
+- [x] 3.2 Projeto e Análise de Algoritmos: A · G · R
+- [x] 3.3 Teoria da Computação: A · G · R
 
 ### Fase 4. Sistemas
-- [ ] 4.1 Sistemas Digitais e Arquitetura de Computadores: A · G · R
-- [ ] 4.2 Sistemas Operacionais: A · G · R
-- [ ] 4.3 Redes de Computadores: A · G · R
-- [ ] 4.4 Concorrência, Paralelismo e Sistemas Distribuídos: A · G · R
-- [ ] 4.5 Bancos de Dados: A · G · R
-- [ ] 4.6 Compiladores e Linguagens de Programação: A · G · R
+- [x] 4.1 Sistemas Digitais e Arquitetura de Computadores: A · G · R
+- [x] 4.2 Sistemas Operacionais: A · G · R
+- [x] 4.3 Redes de Computadores: A · G · R
+- [x] 4.4 Concorrência, Paralelismo e Sistemas Distribuídos: A · G · R
+- [x] 4.5 Bancos de Dados: A · G · R
+- [x] 4.6 Compiladores e Linguagens de Programação: A · G · R
 
 ### Fase 5. Engenharia de Software
-- [ ] 5.1 Engenharia de Software e Projeto em Grupo: A · G · R
+- [x] 5.1 Engenharia de Software e Projeto em Grupo: A · G · R
 
 ### Fase 6. IA e Dados
-- [ ] 6.1 Inteligência Artificial: A · G · R
-- [ ] 6.2 Aprendizado de Máquina: A · G · R
+- [x] 6.1 Inteligência Artificial: A · G · R
+- [x] 6.2 Aprendizado de Máquina: A · G · R
 
 ### Fase 7. Áreas avançadas
-- [ ] 7.1 Segurança e Criptografia: A · G · R
-- [ ] 7.2 Computação Gráfica e IHC: A · G · R
-- [ ] 7.3 Computação, Ética e Sociedade: A · G · R
+- [x] 7.1 Segurança e Criptografia: A · G · R
+- [x] 7.2 Computação Gráfica e IHC: A · G · R
+- [x] 7.3 Computação, Ética e Sociedade: A · G · R
 
 ### Fase 8. Conclusão
-- [ ] 8.1 Projeto Final: A · G · R
+- [x] 8.1 Projeto Final: A · G · R
 
 ## Referências
 
