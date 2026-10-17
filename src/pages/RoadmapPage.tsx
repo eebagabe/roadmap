@@ -1,10 +1,11 @@
-import { Navigate, useParams } from 'react-router-dom'
+import { Link, Navigate, useParams } from 'react-router-dom'
 import { Companies } from '../components/Companies'
 import { NextTopicButton } from '../components/NextTopicButton'
 import { ProgressBar } from '../components/ProgressBar'
 import { Projects } from '../components/Projects'
 import { SectionMap } from '../components/SectionMap'
 import { findRoadmap } from '../data/roadmaps'
+import { hasApostila } from '../lib/apostilas'
 import { progress, useProgress, weekKey } from '../lib/progress'
 import { countDone, findNextTopic, numberedSections, roadmapTopicKeys, totalWeeks } from '../lib/roadmap'
 
@@ -76,7 +77,22 @@ export function RoadmapPage() {
       <div className="relative mt-14 space-y-16">
         <div className="absolute top-0 bottom-0 left-1/2 hidden w-px -translate-x-1/2 bg-line/60 lg:block" aria-hidden />
         {sections.map((section) => (
-          <SectionMap key={section.id} roadmapId={roadmap.id} section={section} nextKey={next?.key} />
+          <SectionMap
+            key={section.id}
+            roadmapId={roadmap.id}
+            section={section}
+            nextKey={next?.key}
+            nodeFooter={
+              hasApostila(roadmap.id, section.id) && (
+                <Link
+                  to={`/roadmap/${roadmap.id}/apostila/${section.id}`}
+                  className="rounded-full border border-black/10 bg-white px-3 py-1 text-xs font-semibold shadow-sm hover:bg-black/5"
+                >
+                  📘 Apostila e gabarito
+                </Link>
+              )
+            }
+          />
         ))}
       </div>
 
