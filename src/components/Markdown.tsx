@@ -44,7 +44,3 @@ export function Markdown({ source }: { source: string }) {
     </div>
   )
 }
-
-export function headings(source: string) {
-  return [...source.matchAll(/^## (.+)$/gm)].map((m) => ({ text: m[1].trim(), id: slug(m[1].trim()) }))
-}

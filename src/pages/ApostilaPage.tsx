@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link, Navigate, useParams, useSearchParams } from 'react-router-dom'
-import { headings, Markdown } from '../components/Markdown'
+import { Markdown } from '../components/Markdown'
 import { findRoadmap } from '../data/roadmaps'
-import { hasApostila, loadApostila, type ApostilaKind } from '../lib/apostilas'
+import { hasApostila, headings, loadApostila, type ApostilaKind } from '../lib/apostilas'
 
-export function ApostilaPage() {
+export default function ApostilaPage() {
   const { roadmapId = '', sectionId = '' } = useParams()
   const [params, setParams] = useSearchParams()
   const kind: ApostilaKind = params.get('aba') === 'gabarito' ? 'gabarito' : 'apostila'
@@ -69,7 +69,7 @@ export function ApostilaPage() {
       <div className="mt-8 grid gap-10 lg:grid-cols-[14rem_1fr]">
         <aside className="hidden lg:block print:hidden">
           <nav className="sticky top-24 space-y-1 text-sm">
-            <p className="mb-2 font-mono text-[10px] font-semibold tracking-widest text-gray-500 uppercase">Nesta {kind}</p>
+            <p className="mb-2 font-mono text-[10px] font-semibold tracking-widest text-gray-500 uppercase">Sumário</p>
             {toc.map((h) => (
               <a key={h.id} href={`#${h.id}`} className="block rounded px-2 py-1 text-gray-600 hover:bg-black/5 hover:text-ink">
                 {h.text}
