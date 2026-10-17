@@ -1,4 +1,4 @@
-import { Children, isValidElement, type ReactNode } from 'react'
+import { Children, isValidElement, useMemo, type ReactNode } from 'react'
 import ReactMarkdown, { type Components } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { slug } from '../lib/progress'
@@ -18,9 +18,7 @@ const CALLOUTS: [RegExp, string][] = [
   [/^(regra|aten[cç][aã]o)/i, 'border-rose-400 bg-rose-50 text-rose-950 dark:border-rose-500 dark:bg-rose-950/30 dark:text-rose-100'],
 ]
 
-const components: Components = {
-  h2: ({ children }) => <h2 id={slug(textOf(children))}>{children}</h2>,
-  h3: ({ children }) => <h3 id={slug(textOf(children))}>{children}</h3>,
+const base: Components = {
   table: ({ children }) => (
     <div className="overflow-x-auto">
       <table>{children}</table>
@@ -33,7 +31,27 @@ const components: Components = {
   },
 }
 
-export function Markdown({ source }: { source: string }) {
+type Props = {
+  source: string
+  /** Conteúdo extra logo após um título (ex.: progresso do tema). */
+  aposTitulo?: (texto: string) => ReactNode
+}
+
+export function Markdown({ source, aposTitulo }: Props) {
+  const components = useMemo<Components>(() => {
+    const titulo = (Tag: 'h2' | 'h3') =>
+      function Titulo({ children }: { children?: ReactNode }) {
+        const texto = textOf(children)
+        return (
+          <>
+            <Tag id={slug(texto)}>{children}</Tag>
+            {aposTitulo?.(texto)}
+          </>
+        )
+      }
+    return { ...base, h2: titulo('h2'), h3: titulo('h3') }
+  }, [aposTitulo])
+
   return (
     <div
       className="prose prose-stone max-w-none dark:prose-invert prose-headings:scroll-mt-24 prose-headings:tracking-tight prose-h1:text-3xl prose-h2:mt-14 prose-h2:border-b prose-h2:border-black/10 dark:prose-h2:border-white/10 prose-h2:pb-2 prose-a:text-ink dark:prose-a:text-white prose-blockquote:not-italic prose-code:rounded prose-code:bg-black/5 dark:prose-code:bg-white/10 prose-code:px-1 prose-code:py-0.5 prose-code:font-normal prose-code:before:content-none prose-code:after:content-none prose-pre:bg-[#1f2430] dark:prose-pre:bg-black/40 dark:prose-pre:ring-1 dark:prose-pre:ring-white/10 prose-pre:text-[13px] prose-th:bg-black/5 dark:prose-th:bg-white/5 prose-th:px-3 prose-td:px-3 [&_blockquote_strong]:text-inherit [&_blockquote_p:first-child]:before:content-none [&_blockquote_p:last-child]:after:content-none [&_pre_code]:bg-transparent [&_pre_code]:p-0"

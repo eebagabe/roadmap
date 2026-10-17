@@ -1,9 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, Navigate, useLocation, useParams, useSearchParams } from 'react-router-dom'
 import { Markdown } from '../components/Markdown'
+import { TemaProgresso } from '../components/TemaProgresso'
 import { findRoadmap } from '../data/roadmaps'
 import { hasApostila, headings, loadApostila, type ApostilaKind } from '../lib/apostilas'
-import { ancoraDoTopico, rolarAte } from '../lib/temas'
+import { useProgress } from '../lib/progress'
+import { countDone, numberedSections, weekTopicKeys } from '../lib/roadmap'
+import { ancoraDoTopico, rolarAte, temaDoTitulo } from '../lib/temas'
 
 export default function ApostilaPage() {
   const { roadmapId = '', sectionId = '' } = useParams()
@@ -27,6 +30,23 @@ export default function ApostilaPage() {
   }, [roadmapId, sectionId, kind, key])
 
   const source = loaded?.key === key ? loaded.source : undefined
+  const { done } = useProgress()
+  const semanas = useMemo(
+    () => (roadmap ? numberedSections(roadmap).find((s) => s.id === sectionId)?.weeks : undefined),
+    [roadmap, sectionId],
+  )
+
+  const aposTitulo = useCallback(
+    (texto: string) => {
+      if (kind !== 'apostila' || !semanas) return null
+      const inicio = temaDoTitulo(texto)
+      const fim = Number(texto.match(/^Atividades de fixação do Tema (\d+)/)?.[1]) || undefined
+      const week = semanas[(inicio ?? fim ?? 0) - 1]
+      if (!week) return null
+      return <TemaProgresso roadmapId={roadmapId} week={week} compacto={!inicio} />
+    },
+    [kind, semanas, roadmapId],
+  )
 
   // Posiciona a leitura quando o conteúdo chega: link de tópico (?semana=&topico=) ou âncora (#).
   useEffect(() => {
@@ -90,16 +110,27 @@ export default function ApostilaPage() {
         <aside className="hidden lg:block print:hidden">
           <nav className="sticky top-24 space-y-1 text-sm">
             <p className="mb-2 font-mono text-[10px] font-semibold tracking-widest text-gray-500 dark:text-gray-400 uppercase">Sumário</p>
-            {toc.map((h) => (
-              <a key={h.id} href={`#${h.id}`} className="block rounded px-2 py-1 text-gray-600 dark:text-gray-400 hover:bg-black/5 dark:hover:bg-white/10 hover:text-ink dark:hover:text-white">
-                {h.text}
-              </a>
-            ))}
+            {toc.map((h) => {
+              const n = temaDoTitulo(h.text)
+              const week = n && kind === 'apostila' ? semanas?.[n - 1] : undefined
+              const keys = week ? weekTopicKeys(roadmapId, week) : []
+              const concluido = keys.length > 0 && countDone(keys, done) === keys.length
+              return (
+                <a
+                  key={h.id}
+                  href={`#${h.id}`}
+                  className="flex gap-1.5 rounded px-2 py-1 text-gray-600 hover:bg-black/5 hover:text-ink dark:text-gray-400 dark:hover:bg-white/10 dark:hover:text-white"
+                >
+                  <span className={concluido ? 'text-emerald-600 dark:text-emerald-400' : ''}>{h.text}</span>
+                  {concluido && <span className="text-emerald-600 dark:text-emerald-400" aria-label="concluído">✓</span>}
+                </a>
+              )
+            })}
           </nav>
         </aside>
 
         <article className="min-w-0 rounded-2xl border border-black/5 dark:border-white/10 bg-white dark:bg-surface-dark px-5 py-8 shadow-sm sm:px-10 print:border-0 print:shadow-none">
-          {source === undefined ? <p className="text-gray-500 dark:text-gray-400">Carregando…</p> : <Markdown source={source} />}
+          {source === undefined ? <p className="text-gray-500 dark:text-gray-400">Carregando…</p> : <Markdown source={source} aposTitulo={aposTitulo} />}
         </article>
       </div>
 
