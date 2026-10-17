@@ -1,22 +1,26 @@
 import { forwardRef } from 'react'
+import { Link } from 'react-router-dom'
+import { hasApostila } from '../lib/apostilas'
 import { progress, topicKey, useProgress, weekKey } from '../lib/progress'
 import { countDone, pad, weekTopicKeys, type NumberedWeek } from '../lib/roadmap'
 import { Checkbox } from './Checkbox'
 
 type Props = {
   roadmapId: string
+  sectionId: string
   week: NumberedWeek
   nextKey?: string
   className?: string
 }
 
-export const WeekCard = forwardRef<HTMLDivElement, Props>(function WeekCard({ roadmapId, week, nextKey, className = '' }, ref) {
+export const WeekCard = forwardRef<HTMLDivElement, Props>(function WeekCard({ roadmapId, sectionId, week, nextKey, className = '' }, ref) {
   const { done, collapsed } = useProgress()
   const keys = weekTopicKeys(roadmapId, week)
   const doneCount = countDone(keys, done)
   const complete = doneCount === keys.length
   const wKey = weekKey(roadmapId, week.id)
   const isCollapsed = !!collapsed[wKey]
+  const comApostila = hasApostila(roadmapId, sectionId)
 
   return (
     <div
@@ -67,18 +71,28 @@ export const WeekCard = forwardRef<HTMLDivElement, Props>(function WeekCard({ ro
             const checked = !!done[key]
             return (
               <li key={key}>
-                <label
+                <div
                   id={`topico-${key}`}
-                  className={`flex cursor-pointer items-center gap-2 rounded-lg border px-2.5 py-1.5 text-sm transition ${
+                  className={`flex items-center gap-2 rounded-lg border px-2.5 py-1.5 text-sm transition ${
                     checked ? 'border-emerald-100 bg-emerald-50 text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300' : 'border-black/10 dark:border-white/10 hover:border-black/25 dark:hover:border-white/30'
                   }`}
                 >
-                  <Checkbox checked={checked} label={topic} onChange={() => progress.toggleTopic(key)} />
-                  <span className={checked ? 'line-through decoration-emerald-600/40' : ''}>{topic}</span>
+                  <Checkbox checked={checked} label={`Marcar ${topic} como concluído`} onChange={() => progress.toggleTopic(key)} />
+                  {comApostila ? (
+                    <Link
+                      to={`/roadmap/${roadmapId}/apostila/${sectionId}?semana=${week.id}&topico=${encodeURIComponent(topic)}`}
+                      title="Abrir este tópico na apostila"
+                      className={`underline-offset-2 hover:underline ${checked ? 'line-through decoration-emerald-600/40' : ''}`}
+                    >
+                      {topic}
+                    </Link>
+                  ) : (
+                    <span className={checked ? 'line-through decoration-emerald-600/40' : ''}>{topic}</span>
+                  )}
                   {key === nextKey && (
                     <span className="rounded-full bg-ink px-2 py-0.5 dark:bg-white dark:text-ink text-[10px] font-semibold text-white">Próximo</span>
                   )}
-                </label>
+                </div>
               </li>
             )
           })}

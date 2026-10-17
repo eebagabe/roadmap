@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
-import { Link, Navigate, useParams, useSearchParams } from 'react-router-dom'
+import { Link, Navigate, useLocation, useParams, useSearchParams } from 'react-router-dom'
 import { Markdown } from '../components/Markdown'
 import { findRoadmap } from '../data/roadmaps'
 import { hasApostila, headings, loadApostila, type ApostilaKind } from '../lib/apostilas'
+import { ancoraDoTopico, rolarAte } from '../lib/temas'
 
 export default function ApostilaPage() {
   const { roadmapId = '', sectionId = '' } = useParams()
@@ -13,6 +14,9 @@ export default function ApostilaPage() {
   const roadmap = findRoadmap(roadmapId)
   const section = roadmap?.sections.find((s) => s.id === sectionId)
   const key = `${roadmapId}/${sectionId}/${kind}`
+  const { hash } = useLocation()
+  const semana = params.get('semana')
+  const topico = params.get('topico') ?? undefined
 
   useEffect(() => {
     let alive = true
@@ -22,9 +26,25 @@ export default function ApostilaPage() {
     }
   }, [roadmapId, sectionId, kind, key])
 
+  const source = loaded?.key === key ? loaded.source : undefined
+
+  // Posiciona a leitura quando o conteúdo chega: link de tópico (?semana=&topico=) ou âncora (#).
+  useEffect(() => {
+    if (!source || !section) return
+    requestAnimationFrame(() => {
+      if (hash) return rolarAte(decodeURIComponent(hash.slice(1)))
+      const tema = section.weeks.findIndex((w) => w.id === semana) + 1
+      if (kind === 'apostila' && tema > 0) {
+        const id = ancoraDoTopico(source, tema, topico)
+        if (id) rolarAte(id, true)
+      }
+    })
+    // Só ao abrir a página ou trocar o destino; não a cada marcação de progresso.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [source, semana, topico])
+
   if (!roadmap || !section || !hasApostila(roadmapId, sectionId)) return <Navigate to={`/roadmap/${roadmapId}`} replace />
 
-  const source = loaded?.key === key ? loaded.source : undefined
   const toc = source ? headings(source) : []
   const hasGabarito = hasApostila(roadmapId, sectionId, 'gabarito')
   const index = roadmap.sections.findIndex((s) => s.id === sectionId)

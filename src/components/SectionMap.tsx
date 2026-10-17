@@ -93,6 +93,7 @@ export function SectionMap({ roadmapId, section, nextKey, nodeFooter }: Props) {
               else cardRefs.current.delete(week.id)
             }}
             roadmapId={roadmapId}
+            sectionId={section.id}
             week={week}
             nextKey={nextKey}
             className={`self-start ${i % 2 === 0 ? 'lg:col-start-1' : 'lg:col-start-3'} ${ROW_START[Math.floor(i / 2)]}`}
