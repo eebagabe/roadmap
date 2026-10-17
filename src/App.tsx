@@ -1,7 +1,15 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { Layout } from './components/Layout'
+import { HomePage } from './pages/HomePage'
+
 export default function App() {
   return (
-    <main className="mx-auto max-w-3xl px-4 py-16 text-center">
-      <h1 className="text-4xl font-extrabold tracking-tight">Roadmap</h1>
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route index element={<HomePage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
