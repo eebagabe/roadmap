@@ -12,7 +12,7 @@ Roadmaps de estudo em português, inspirados no [roadmap.sh](https://roadmap.sh)
 | 📊 Analista e Engenheiro de Dados | 19 | Fundamentos, SQL e Modelagem, Análise de Dados e BI, Engenharia de Dados, Cloud e Big Data, Governança e Arquitetura |
 | 🔌 Sistemas Embarcados | 33 | Fundamentos de Eletrônica, C para Embarcados, Microcontroladores, RTOS e Tempo Real, Linux Embarcado, Conectividade e IoT, Redes Industriais e Automotivas, Controle, Hardware e Confiabilidade |
 | 🤖 LLMs e Agents | - | Em breve |
-| 🎓 Ciência da Computação | ~116 | Em breve. Plano completo em [docs/trilhas/ciencia-da-computacao.md](docs/trilhas/ciencia-da-computacao.md) |
+| 🎓 Ciência da Computação | 116 | 25 etapas em 9 fases: Preparação, Programação, Matemática para Computação, Algoritmos e Teoria, Sistemas, Engenharia de Software, IA e Dados, Áreas avançadas e Projeto Final. Une o núcleo de ITA, MIT, Harvard e Oxford; plano em [docs/trilhas/ciencia-da-computacao.md](docs/trilhas/ciencia-da-computacao.md) |
 | 🌐 Idiomas (Inglês, Espanhol, Chinês, Japonês, Coreano) | - | Em breve |
 
 ## Funcionalidades
